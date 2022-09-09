@@ -1,0 +1,14 @@
+//
+//  TestPuzzle.json
+//  Cypher
+//
+//  Created by Zach Tidwell on 8/24/22.
+//
+
+{"title": "Test Puzzle",
+"hintAnswerPairs": [
+"You use this to clean your teeth": "toothbrush",
+"Walking in a Winter...": "wonderland",
+"Haters gonna...", "hate"
+]
+}
