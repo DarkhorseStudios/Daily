@@ -1,0 +1,25 @@
+{
+"title": "Outside of Earth",
+"hintAnswerPairs": [
+{"hint": "Stellar body orbiting a star",
+"answer": "planet",
+"solved": false},
+{"hint": "Earth resides in the Milky Way",
+"answer": "Galaxy",
+"solved": false},
+{"hint": "Planet furthest from the sun",
+"answer": "Neptune",
+"solved": false},
+{"hint": "Solar flares release bursts of",
+"answer": "radiation",
+"solved": false},
+{"hint": "Shape of planet orbits around the sun",
+"answer": "elliptical",
+"solved": false},
+{"hint": "large masses of ice and dust with visible tails",
+"answer": "Comets",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

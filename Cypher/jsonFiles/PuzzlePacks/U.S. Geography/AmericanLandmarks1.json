@@ -1,0 +1,25 @@
+{
+"title": "American Landmarks 1",
+"hintAnswerPairs": [
+{"hint": "Ancient forest in California",
+"answer": "Redwood",
+"solved": false},
+{"hint": "Sculpted mountain in South Dakota",
+"answer": "Rushmore",
+"solved": false},
+{"hint": "Famous mountain trail",
+"answer": "Appalachian",
+"solved": false},
+{"hint": "Renowned desert destination in Utah",
+"answer": "Moab",
+"solved": false},
+{"hint": "Home of world-famous geyser",
+"answer": "Yellowstone",
+"solved": false},
+{"hint": "Giant arch in St. Lous",
+"answer": "Gateway",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

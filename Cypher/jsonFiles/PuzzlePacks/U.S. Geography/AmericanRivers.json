@@ -1,0 +1,25 @@
+{
+"title": "American Rivers 1",
+"hintAnswerPairs": [
+{"hint": "Runs through the Grand Canyon",
+"answer": "Colorado",
+"solved": false},
+{"hint": "Famously crossed by George Washington",
+"answer": "Delaware",
+"solved": false},
+{"hint": "Originates in Colorado",
+"answer": "Arkansas",
+"solved": false},
+{"hint": "Passes through Washingtion, D.C.",
+"answer": "Potomac",
+"solved": false},
+{"hint": "Jet liner crash-landed here",
+"answer": "Hudson",
+"solved": false},
+{"hint": "longest American river",
+"answer": "Missouri",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

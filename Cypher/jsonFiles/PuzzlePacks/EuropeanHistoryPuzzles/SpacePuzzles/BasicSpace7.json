@@ -1,0 +1,25 @@
+{
+"title": "",
+"hintAnswerPairs": [
+{"hint": "gravitational force in space",
+"answer": "microgravity",
+"solved": false},
+{"hint": "largest type of black hole",
+"answer": "supermassive",
+"solved": false},
+{"hint": "Planets in other solar systems",
+"answer": "exoplanets",
+"solved": false},
+{"hint": "planets that might hold life",
+"answer": "Goldilocks",
+"solved": false},
+{"hint": "Reality comprised of multiple dimensions",
+"answer": "multiverse",
+"solved": false},
+{"hint": "Ship with a Captain named Kirk",
+"answer": "Enterprise",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

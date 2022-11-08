@@ -1,0 +1,26 @@
+
+{
+"title": "The Void",
+"hintAnswerPairs": [
+{"hint": "Hostile species in 'Alien' movies",
+"answer": "Xenomorphs",
+"solved": false},
+{"hint": "Force that warps space-time",
+"answer": "Gravity",
+"solved": false},
+{"hint": "Idea that life was carried here on a meteor",
+"answer": "panspermia",
+"solved": false},
+{"hint": "Engineering a planet's surface",
+"answer": "terraform",
+"solved": false},
+{"hint": "Rocket engine's Oxygen source",
+"answer": "Oxidizer",
+"solved": false},
+{"hint": "Russian astronauts",
+"answer": "cosmonauts",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

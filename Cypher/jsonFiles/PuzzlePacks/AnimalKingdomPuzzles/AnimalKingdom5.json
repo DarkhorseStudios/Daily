@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 5",
+"hintAnswerPairs": [
+{"hint": "Extinct, massive shark",
+"answer": "Megalodon",
+"solved": false},
+{"hint": "Lizard-like amphibian",
+"answer": "Salamander",
+"solved": false},
+{"hint": "Snuggly cousin of squids",
+"answer": "Cuddlefish",
+"solved": false},
+{"hint": "Largest poisonous spider",
+"answer": "Huntsman",
+"solved": false},
+{"hint": "caterpillars morph inside a",
+"answer": "cocoon",
+"solved": false},
+{"hint": "Lobsters and crabs are",
+"answer": "crustaceans",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

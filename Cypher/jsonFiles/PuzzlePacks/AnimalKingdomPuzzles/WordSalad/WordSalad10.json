@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 10",
+"hintAnswerPairs": [
+{"hint": "Something mentioned by someone else",
+"answer": "recommendation",
+"solved": false},
+{"hint": "A class given by a tutor",
+"answer": "tutorial",
+"solved": false},
+{"hint": "Information that can be heard is",
+"answer": "auditory",
+"solved": false},
+{"hint": "Setting in which fashion designers showcase their work",
+"answer": "runway",
+"solved": false},
+{"hint": "Economic area pertaining to fabrics",
+"answer": "Textiles",
+"solved": false},
+{"hint": "Unconfirmed information learned from another",
+"answer": "hearsay",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

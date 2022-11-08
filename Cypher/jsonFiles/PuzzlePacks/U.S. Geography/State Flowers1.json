@@ -1,0 +1,25 @@
+{
+"title": "State Flowers 1",
+"hintAnswerPairs": [
+{"hint": "Colorado state flower",
+"answer": "Columbine",
+"solved": false},
+{"hint": "State of the Magnolia",
+"answer": "Mississippi",
+"solved": false},
+{"hint": "Alabama state flower",
+"answer": "Camellia",
+"solved": false},
+{"hint": "State of the Peony",
+"answer": "Indiana",
+"solved": false},
+{"hint": "Kentucky state flower",
+"answer": "Goldenrod",
+"solved": false},
+{"hint": "State of the Scarlet Carnation",
+"answer": "Ohio",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

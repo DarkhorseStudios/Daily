@@ -1,0 +1,25 @@
+{
+"title": "Life Under The Sea 5",
+"hintAnswerPairs": [
+{"hint": "Disease often incurred by sailors of the past",
+"answer": "Scurvy",
+"solved": false},
+{"hint": "The large fin on the backs of whales and dolphins",
+"answer": "Dorsal",
+"solved": false},
+{"hint": "Creatures known to switch between male and female for reproductive purposes",
+"answer": "Seahorses",
+"solved": false},
+{"hint": "Underwater plant that looks like tall grass",
+"answer": "Kelp",
+"solved": false},
+{"hint": "Underwater detection technology that uses sound",
+"answer": "Sonar",
+"solved": false},
+{"hint": "Bloody bait used to draw sharks into a frenzy",
+"answer": "chum",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

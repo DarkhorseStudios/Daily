@@ -1,0 +1,25 @@
+{
+"title": "American Landmarks 3",
+"hintAnswerPairs": [
+{"hint": "Home of the Space Needle",
+"answer": "Seattle",
+"solved": false},
+{"hint": "Iconic dam built during Great Depression",
+"answer": "Hoover",
+"solved": false},
+{"hint": "Florida marsh overrun by reptiles",
+"answer": "Everglades",
+"solved": false},
+{"hint":"Tallest mountain in the U.S.",
+"answer": "Denali",
+"solved": false},
+{"hint": "Home of NASA launch site",
+"answer": "Canaveral",
+"solved": false},
+{"hint": "National veteran cemetary in Virginia",
+"answer": "Arlington",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

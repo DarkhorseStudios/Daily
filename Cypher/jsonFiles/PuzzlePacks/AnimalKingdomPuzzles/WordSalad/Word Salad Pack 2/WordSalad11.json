@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 11",
+"hintAnswerPairs": [
+{"hint": "Massive, old-style church",
+"answer": "cathredral",
+"solved": false},
+{"hint": "Prison in medieval castles",
+"answer": "dungeon",
+"solved": false},
+{"hint": "Seat upon which a monarch sits",
+"answer": "throne",
+"solved": false},
+{"hint": "Byproduct of cutting wood",
+"answer": "sawdust",
+"solved": false},
+{"hint": "Dedication of money to purchase an asset over time",
+"answer": "investment",
+"solved": false},
+{"hint": "Family possession handed-down over generations",
+"answer": "heirloom",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -7,60 +7,255 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0D991B28B7A74500239EFB /* Fillable_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D991A28B7A74500239EFB /* Fillable_protocol.swift */; };
+		8A0093202915497E00F90D56 /* SharingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00931F2915497E00F90D56 /* SharingProfileView.swift */; };
+		8A047F1029129D1100E404E3 /* PuzzlePackDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A047F0F29129D1100E404E3 /* PuzzlePackDirectory.swift */; };
+		8A047F132912A2BC00E404E3 /* allPuzzlePacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A047F122912A2BC00E404E3 /* allPuzzlePacks.swift */; };
+		8A06C36F2911E82A00B9D904 /* PuzzleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C36E2911E82A00B9D904 /* PuzzleButton.swift */; };
+		8A06C3752911F70C00B9D904 /* StandardPuzzlePackDataTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A06C3742911F70C00B9D904 /* StandardPuzzlePackDataTemplate.json */; };
+		8A0B823228F6515300C95A36 /* BasicSpace8.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A0B823128F6515300C95A36 /* BasicSpace8.json */; };
+		8A0B823428F6554C00C95A36 /* BasicSpace9.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A0B823328F6554C00C95A36 /* BasicSpace9.json */; };
+		8A1328C328D8FD64003D3ED5 /* StandardPuzzleTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1328C228D8FD64003D3ED5 /* StandardPuzzleTemplate.json */; };
+		8A1328C728D913F9003D3ED5 /* BundleDirectoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1328C628D913F9003D3ED5 /* BundleDirectoryProvider.swift */; };
+		8A134D7B290C9B9000A11792 /* WordSalad17.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A134D7A290C9B9000A11792 /* WordSalad17.json */; };
+		8A134D7D290C9BA700A11792 /* WordSalad18.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A134D7C290C9BA700A11792 /* WordSalad18.json */; };
+		8A1578A728F119D000AEBA5F /* AmericanRivers.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1578A628F119D000AEBA5F /* AmericanRivers.json */; };
 		8A15C90A28B796EA008F7D2B /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15C90928B796EA008F7D2B /* Puzzle.swift */; };
+		8A1E522D290769BD00899D93 /* WordSalad3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E522C290769BD00899D93 /* WordSalad3.json */; };
+		8A1E522F29076CD400899D93 /* WordSalad4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E522E29076CD300899D93 /* WordSalad4.json */; };
+		8A1E523129076FCA00899D93 /* AnimalKingdom11.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E523029076FCA00899D93 /* AnimalKingdom11.json */; };
+		8A1FC11E29068A5E00E4A99F /* LifeUnderTheSea4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1FC11D29068A5E00E4A99F /* LifeUnderTheSea4.json */; };
+		8A1FC12029068C2200E4A99F /* LifeUnderTheSea5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A1FC11F29068C2200E4A99F /* LifeUnderTheSea5.json */; };
+		8A23BFC02909D6C9008F1E5E /* WordSalad12.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A23BFBF2909D6C9008F1E5E /* WordSalad12.json */; };
+		8A244476290A70600013E003 /* WordSalad14.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A244475290A70600013E003 /* WordSalad14.json */; };
+		8A244478290A72CD0013E003 /* WordSalad15.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A244477290A72CD0013E003 /* WordSalad15.json */; };
+		8A2680CF28F19DBB00C9CF76 /* AmericanLandmarks1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A2680CE28F19DBB00C9CF76 /* AmericanLandmarks1.json */; };
+		8A2680D128F1A30600C9CF76 /* AmericanLandmarks2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A2680D028F1A30600C9CF76 /* AmericanLandmarks2.json */; };
+		8A2680D328F1A82B00C9CF76 /* AmericanLandmarks3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A2680D228F1A82B00C9CF76 /* AmericanLandmarks3.json */; };
 		8A277DC128BDA62F008BA3DE /* NextPuzzlePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A277DC028BDA62F008BA3DE /* NextPuzzlePromptView.swift */; };
-		8A2DC58028BA53EF000CC0CF /* DecodePuzzle_extension_Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DC57F28BA53EF000CC0CF /* DecodePuzzle_extension_Bundle.swift */; };
+		8A2ABE8128F60A3300FD0F77 /* RowsOfButtonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ABE8028F60A3300FD0F77 /* RowsOfButtonsData.swift */; };
+		8A2B07B028F4E86900610226 /* BasicSpace4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B07AF28F4E86900610226 /* BasicSpace4.json */; };
+		8A2B07B228F4EBC800610226 /* BasicSpace5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B07B128F4EBC800610226 /* BasicSpace5.json */; };
+		8A34CBB7290F1D560096F4E2 /* WordSalad21.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A34CBB6290F1D560096F4E2 /* WordSalad21.json */; };
+		8A34CBB9290F1F040096F4E2 /* U.S.History6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A34CBB8290F1F040096F4E2 /* U.S.History6.json */; };
 		8A36785328CB634500094986 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36785228CB634500094986 /* ColorScheme.swift */; };
-		8A40778B28BE13D400EA6521 /* HintAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A40778A28BE13D400EA6521 /* HintAnswerView.swift */; };
-		8A50401E28CB81B6008D8DE6 /* HardCodedPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50401D28CB81B6008D8DE6 /* HardCodedPuzzle.swift */; };
-		8A67B32B28C6C154008D36BF /* UserPuzzleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67B32A28C6C154008D36BF /* UserPuzzleData.swift */; };
+		8A38E1F128DFD0A900524F80 /* Numerical3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A38E1F028DFD0A900524F80 /* Numerical3.json */; };
+		8A3DE86C290261920094550B /* U.S.History2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A3DE86B290261920094550B /* U.S.History2.json */; };
+		8A3DE86F290264C60094550B /* LifeUnderTheSea1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A3DE86E290264C60094550B /* LifeUnderTheSea1.json */; };
+		8A41CFA029085CF900AF6D47 /* WordSalad5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A41CF9F29085CF900AF6D47 /* WordSalad5.json */; };
+		8A441DB328FA230A00CCD7F0 /* AnimalKingdom7.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A441DB228FA230A00CCD7F0 /* AnimalKingdom7.json */; };
+		8A441DB528FA261E00CCD7F0 /* AnimalKingdom8.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A441DB428FA261E00CCD7F0 /* AnimalKingdom8.json */; };
+		8A4BFD3C290CDD0400522546 /* HintAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4BFD3B290CDD0400522546 /* HintAnswerView.swift */; };
+		8A54352928F7955F0003480A /* BasicSpace10.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A54352828F7955F0003480A /* BasicSpace10.json */; };
+		8A5BD65D29142B5700D3EA77 /* AnimalKingdom13.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BD65C29142B5700D3EA77 /* AnimalKingdom13.json */; };
+		8A5BD65F29142E0E00D3EA77 /* WordSalad26.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BD65E29142E0E00D3EA77 /* WordSalad26.json */; };
+		8A5BD66129142FF600D3EA77 /* AnimalKingdom14.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BD66029142FF600D3EA77 /* AnimalKingdom14.json */; };
+		8A5CF97428E1F803007082D1 /* Numerical9.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5CF97328E1F803007082D1 /* Numerical9.json */; };
+		8A5FD61128F7A99D00BC7DAF /* AnimalKingdom4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FD61028F7A99D00BC7DAF /* AnimalKingdom4.json */; };
+		8A5FD61328F7AC3000BC7DAF /* AnimalKingdom5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A5FD61228F7AC3000BC7DAF /* AnimalKingdom5.json */; };
+		8A6408E328F0D93800B19B49 /* State Flowers1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A6408E228F0D93800B19B49 /* State Flowers1.json */; };
+		8A643AF5290CA3BB00AC2180 /* WordSalad20.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A643AF4290CA3BB00AC2180 /* WordSalad20.json */; };
+		8A6A270828E13BA40090857C /* Numerical4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A270728E13BA40090857C /* Numerical4.json */; };
+		8A6A270A28E142950090857C /* Numerical5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A270928E142950090857C /* Numerical5.json */; };
+		8A6A270C28E150750090857C /* Numerical6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A270B28E150750090857C /* Numerical6.json */; };
+		8A6A271028E1601C0090857C /* Numerical8.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A6A270F28E1601C0090857C /* Numerical8.json */; };
+		8A6AC6BC28E684A500DC52B6 /* UnsolvedHintAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AC6BB28E684A500DC52B6 /* UnsolvedHintAnswerView.swift */; };
+		8A6AC6BE28E684BD00DC52B6 /* SolvedHintAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6AC6BD28E684BD00DC52B6 /* SolvedHintAnswerView.swift */; };
 		8A6C058128C0D9DB00AD1CD2 /* HintAnswerPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C058028C0D9DB00AD1CD2 /* HintAnswerPair.swift */; };
-		8A6C058928C0ED8F00AD1CD2 /* LetterGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C058828C0ED8F00AD1CD2 /* LetterGroupButton.swift */; };
-		8A7211CD28C7EE8900C56909 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7211CC28C7EE8900C56909 /* CustomPicker.swift */; };
-		8A782CDE28BA8F1100835F3C /* ColorTheme_extension_ShapeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A782CDD28BA8F1100835F3C /* ColorTheme_extension_ShapeStyle.swift */; };
+		8A7710F72917F5FF00673C49 /* WordSalad31.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A7710F62917F5FF00673C49 /* WordSalad31.json */; };
+		8A79E6B32913F18C001DD793 /* LetterGroupButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79E6B22913F18C001DD793 /* LetterGroupButtonData.swift */; };
+		8A79E6B52913F204001DD793 /* LetterGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79E6B42913F204001DD793 /* LetterGroupButton.swift */; };
+		8A7B46522909815800276734 /* WordSalad11.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A7B46512909815800276734 /* WordSalad11.json */; };
 		8A851B9828B6AD0800FD4250 /* AllSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A851B9728B6AD0800FD4250 /* AllSettings.swift */; };
-		8A8E36D728C12258003A5D7E /* CustomShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E36D628C12258003A5D7E /* CustomShapeView.swift */; };
-		8A8E36D928C12BCB003A5D7E /* LetterGroupButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E36D828C12BCB003A5D7E /* LetterGroupButtonView.swift */; };
+		8A8591C128F8F37900798F61 /* AnimalKingdom6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A8591C028F8F37900798F61 /* AnimalKingdom6.json */; };
+		8A85F90928CD64A900652C22 /* TestPuzzle.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A85F90828CD64A900652C22 /* TestPuzzle.json */; };
+		8A870F992908E1AA00FC8974 /* WordSalad10.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A870F982908E1AA00FC8974 /* WordSalad10.json */; };
+		8A876596290F508A007A2498 /* WordSalad22.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A876595290F508A007A2498 /* WordSalad22.json */; };
+		8A876598290F511A007A2498 /* AnimalKingdom12.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A876597290F511A007A2498 /* AnimalKingdom12.json */; };
+		8A8FE27C2909DAB700154EB8 /* WordSalad13.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A8FE27B2909DAB700154EB8 /* WordSalad13.json */; };
+		8A9246D428FB2FFA003D0E79 /* AnimalKingdom10.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9246D328FB2FF9003D0E79 /* AnimalKingdom10.json */; };
+		8A9246D728FB323C003D0E79 /* U.S.History.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9246D628FB323C003D0E79 /* U.S.History.json */; };
+		8A96189228D56906006FA82F /* Decode_BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A96189128D56906006FA82F /* Decode_BundleExtension.swift */; };
+		8A97BB9328DFA12B00F0DCFF /* Numerical7.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A97BB9228DFA12B00F0DCFF /* Numerical7.json */; };
+		8A97BB9528DFA16200F0DCFF /* Numerical1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A97BB9428DFA16200F0DCFF /* Numerical1.json */; };
+		8A97BB9728DFA8E200F0DCFF /* Numerical2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A97BB9628DFA8E200F0DCFF /* Numerical2.json */; };
+		8A9C2F992919B00500FC2152 /* DocumentDirectoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C2F982919B00500FC2152 /* DocumentDirectoryProvider.swift */; };
+		8A9C7AF6291182520099DBB9 /* StandardPuzzlePacksDirectory.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9C7AF5291182520099DBB9 /* StandardPuzzlePacksDirectory.json */; };
+		8A9D551C2908556C00D3F043 /* U.S.History5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9D551B2908556C00D3F043 /* U.S.History5.json */; };
+		8AA15FCE291721DF00B7715E /* WordSalad29.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA15FCD291721DF00B7715E /* WordSalad29.json */; };
+		8AA15FD22917239300B7715E /* WordSalad30.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA15FD12917239300B7715E /* WordSalad30.json */; };
+		8AA15FD42917247200B7715E /* WordSalad32.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA15FD32917247200B7715E /* WordSalad32.json */; };
+		8AA2E2A028DE8AC3004C856F /* AnimalKingdom1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2E29F28DE8AC3004C856F /* AnimalKingdom1.json */; };
+		8AA2E2A228DE8E4A004C856F /* AnimalKingdom2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2E2A128DE8E4A004C856F /* AnimalKingdom2.json */; };
+		8AA2E2A428DE9378004C856F /* AnimalKingdom3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2E2A328DE9378004C856F /* AnimalKingdom3.json */; };
+		8AA2FD3828FB085700213E9B /* AnimalKingdom9.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2FD3728FB085700213E9B /* AnimalKingdom9.json */; };
+		8AA345812910A44C00764B36 /* WordSalad23.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA345802910A44C00764B36 /* WordSalad23.json */; };
+		8AA345832910A6F400764B36 /* WordSalad24.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA345822910A6F400764B36 /* WordSalad24.json */; };
+		8AA345852910A8D500764B36 /* WordSalad25.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA345842910A8D500764B36 /* WordSalad25.json */; };
+		8AA5017228F58A80002439AD /* BasicSpace6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA5017128F58A80002439AD /* BasicSpace6.json */; };
+		8AA8EA3528E16F1700295C19 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8EA3428E16F1700295C19 /* SoundManager.swift */; };
 		8AAA244728C77E5300EF63C2 /* DisplaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA244628C77E5300EF63C2 /* DisplaySettingsView.swift */; };
+		8AAD538F28E1FBB9006FBA79 /* Numerical10.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AAD538E28E1FBB9006FBA79 /* Numerical10.json */; };
+		8ABAC13F28F1C39300334C98 /* BasicSpace3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABAC13E28F1C39300334C98 /* BasicSpace3.json */; };
+		8ABEA4242914169900A7B9B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEA4232914169900A7B9B2 /* User.swift */; };
+		8AC0CFED28F64825008D793E /* BasicSpace7.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AC0CFEC28F64825008D793E /* BasicSpace7.json */; };
 		8AC104DA28C6AD67007CB3B5 /* PuzzlePacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC104D928C6AD67007CB3B5 /* PuzzlePacksView.swift */; };
-		8AD62B4628BD940E009734C5 /* ActivePuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD62B4528BD940E009734C5 /* ActivePuzzleView.swift */; };
+		8AC947CE29075B67004C7EA1 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC947CD29075B67004C7EA1 /* UnlockManager.swift */; };
+		8ACAAD3A2906E76A00054C5E /* WordSalad1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ACAAD392906E76A00054C5E /* WordSalad1.json */; };
+		8ACAAD3C2906E8C500054C5E /* WordSalad2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ACAAD3B2906E8C500054C5E /* WordSalad2.json */; };
+		8ACAAD3E2906EAE300054C5E /* LifeUnderTheSea6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ACAAD3D2906EAE300054C5E /* LifeUnderTheSea6.json */; };
+		8ACD73BA2919BD8D0007F0FE /* AnimalKingdom15.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ACD73B92919BD8D0007F0FE /* AnimalKingdom15.json */; };
+		8ACD73BE2919BF820007F0FE /* WordSalad33.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ACD73BD2919BF820007F0FE /* WordSalad33.json */; };
+		8AD556532916264E00D04769 /* WordSalad27.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AD556522916264E00D04769 /* WordSalad27.json */; };
+		8ADA4522290CB8B7003099A0 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA4521290CB8B7003099A0 /* GameData.swift */; };
+		8ADA4528290CC0C5003099A0 /* ActivePuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA4527290CC0C5003099A0 /* ActivePuzzleView.swift */; };
+		8ADA53502908D8AE001DFAB3 /* WordSalad7.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ADA534F2908D8AE001DFAB3 /* WordSalad7.json */; };
+		8ADA53522908DAFC001DFAB3 /* WordSalad8.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ADA53512908DAFC001DFAB3 /* WordSalad8.json */; };
+		8ADA53542908DC6E001DFAB3 /* WordSalad9.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ADA53532908DC6E001DFAB3 /* WordSalad9.json */; };
+		8ADCAF9E29088B0900B5E591 /* WordSalad6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ADCAF9D29088B0900B5E591 /* WordSalad6.json */; };
 		8AE6A7C328B678EE00EFEDD6 /* CypherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6A7C228B678EE00EFEDD6 /* CypherApp.swift */; };
 		8AE6A7C528B678EE00EFEDD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6A7C428B678EE00EFEDD6 /* ContentView.swift */; };
 		8AE6A7C728B678EF00EFEDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6A7C628B678EF00EFEDD6 /* Assets.xcassets */; };
 		8AE6A7CA28B678EF00EFEDD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6A7C928B678EF00EFEDD6 /* Preview Assets.xcassets */; };
-		8AE6A7D128B67AED00EFEDD6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6A7D028B67AED00EFEDD6 /* SettingsView.swift */; };
 		8AE6CA6A28CB6FBC00B8B6B1 /* AllColorSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6CA6928CB6FBC00B8B6B1 /* AllColorSchemes.swift */; };
-		8AFE007A28C78C360035F685 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE007928C78C360035F685 /* CustomStepper.swift */; };
+		8AEB6A6428F1BC4C00B4FCD4 /* BasicSpace1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB6A6328F1BC4C00B4FCD4 /* BasicSpace1.json */; };
+		8AEB6A6628F1C0D500B4FCD4 /* BasicSpace2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB6A6528F1C0D500B4FCD4 /* BasicSpace2.json */; };
+		8AF01618291340A300FAD72F /* PuzzlePackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF01617291340A300FAD72F /* PuzzlePackData.swift */; };
+		8AF0161A291344F000FAD72F /* PuzzlePack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF01619291344F000FAD72F /* PuzzlePack.swift */; };
+		8AF0161C2913477500FAD72F /* IndividualPuzzlePackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0161B2913477500FAD72F /* IndividualPuzzlePackView.swift */; };
+		8AF09C76291669FF00695B4D /* WordSalad28.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AF09C75291669FF00695B4D /* WordSalad28.json */; };
+		8AF7FC07290AD5E70041F199 /* WordSalad16.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AF7FC06290AD5E70041F199 /* WordSalad16.json */; };
+		8AFF513D2902F36C00736F66 /* LifeUnderTheSea2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AFF513C2902F36C00736F66 /* LifeUnderTheSea2.json */; };
+		8AFF513F2902F6A800736F66 /* LifeUnderTheSea3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AFF513E2902F6A800736F66 /* LifeUnderTheSea3.json */; };
+		8AFF51412902F98A00736F66 /* U.S.History3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AFF51402902F98A00736F66 /* U.S.History3.json */; };
+		8AFF51432902FEC900736F66 /* U.S.History4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AFF51422902FEC900736F66 /* U.S.History4.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A0D991A28B7A74500239EFB /* Fillable_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillable_protocol.swift; sourceTree = "<group>"; };
+		8A00931F2915497E00F90D56 /* SharingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingProfileView.swift; sourceTree = "<group>"; };
+		8A047F0F29129D1100E404E3 /* PuzzlePackDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePackDirectory.swift; sourceTree = "<group>"; };
+		8A047F122912A2BC00E404E3 /* allPuzzlePacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allPuzzlePacks.swift; sourceTree = "<group>"; };
+		8A06C36E2911E82A00B9D904 /* PuzzleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleButton.swift; sourceTree = "<group>"; };
+		8A06C3742911F70C00B9D904 /* StandardPuzzlePackDataTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StandardPuzzlePackDataTemplate.json; sourceTree = "<group>"; };
+		8A0B823128F6515300C95A36 /* BasicSpace8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace8.json; sourceTree = "<group>"; };
+		8A0B823328F6554C00C95A36 /* BasicSpace9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace9.json; sourceTree = "<group>"; };
+		8A1328C228D8FD64003D3ED5 /* StandardPuzzleTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StandardPuzzleTemplate.json; sourceTree = "<group>"; };
+		8A1328C628D913F9003D3ED5 /* BundleDirectoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDirectoryProvider.swift; sourceTree = "<group>"; };
+		8A134D7A290C9B9000A11792 /* WordSalad17.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad17.json; sourceTree = "<group>"; };
+		8A134D7C290C9BA700A11792 /* WordSalad18.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad18.json; sourceTree = "<group>"; };
+		8A1578A628F119D000AEBA5F /* AmericanRivers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AmericanRivers.json; sourceTree = "<group>"; };
 		8A15C90928B796EA008F7D2B /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		8A1E522C290769BD00899D93 /* WordSalad3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad3.json; sourceTree = "<group>"; };
+		8A1E522E29076CD300899D93 /* WordSalad4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad4.json; sourceTree = "<group>"; };
+		8A1E523029076FCA00899D93 /* AnimalKingdom11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom11.json; sourceTree = "<group>"; };
+		8A1FC11D29068A5E00E4A99F /* LifeUnderTheSea4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea4.json; sourceTree = "<group>"; };
+		8A1FC11F29068C2200E4A99F /* LifeUnderTheSea5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea5.json; sourceTree = "<group>"; };
+		8A23BFBF2909D6C9008F1E5E /* WordSalad12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad12.json; sourceTree = "<group>"; };
+		8A244475290A70600013E003 /* WordSalad14.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad14.json; sourceTree = "<group>"; };
+		8A244477290A72CD0013E003 /* WordSalad15.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad15.json; sourceTree = "<group>"; };
+		8A2680CE28F19DBB00C9CF76 /* AmericanLandmarks1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AmericanLandmarks1.json; sourceTree = "<group>"; };
+		8A2680D028F1A30600C9CF76 /* AmericanLandmarks2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AmericanLandmarks2.json; sourceTree = "<group>"; };
+		8A2680D228F1A82B00C9CF76 /* AmericanLandmarks3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AmericanLandmarks3.json; sourceTree = "<group>"; };
 		8A277DC028BDA62F008BA3DE /* NextPuzzlePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPuzzlePromptView.swift; sourceTree = "<group>"; };
-		8A2DC57F28BA53EF000CC0CF /* DecodePuzzle_extension_Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodePuzzle_extension_Bundle.swift; sourceTree = "<group>"; };
+		8A2ABE8028F60A3300FD0F77 /* RowsOfButtonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowsOfButtonsData.swift; sourceTree = "<group>"; };
+		8A2B07AF28F4E86900610226 /* BasicSpace4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace4.json; sourceTree = "<group>"; };
+		8A2B07B128F4EBC800610226 /* BasicSpace5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace5.json; sourceTree = "<group>"; };
+		8A2F3D82290C4E2D00922492 /* WordSalad19.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad19.json; sourceTree = "<group>"; };
+		8A34CBB6290F1D560096F4E2 /* WordSalad21.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad21.json; sourceTree = "<group>"; };
+		8A34CBB8290F1F040096F4E2 /* U.S.History6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History6.json; sourceTree = "<group>"; };
 		8A36785228CB634500094986 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
-		8A40778A28BE13D400EA6521 /* HintAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAnswerView.swift; sourceTree = "<group>"; };
-		8A50401D28CB81B6008D8DE6 /* HardCodedPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodedPuzzle.swift; sourceTree = "<group>"; };
-		8A67B32A28C6C154008D36BF /* UserPuzzleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPuzzleData.swift; sourceTree = "<group>"; };
+		8A38E1F028DFD0A900524F80 /* Numerical3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical3.json; sourceTree = "<group>"; };
+		8A3DE86B290261920094550B /* U.S.History2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History2.json; sourceTree = "<group>"; };
+		8A3DE86E290264C60094550B /* LifeUnderTheSea1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea1.json; sourceTree = "<group>"; };
+		8A41CF9F29085CF900AF6D47 /* WordSalad5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad5.json; sourceTree = "<group>"; };
+		8A441DB228FA230A00CCD7F0 /* AnimalKingdom7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom7.json; sourceTree = "<group>"; };
+		8A441DB428FA261E00CCD7F0 /* AnimalKingdom8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom8.json; sourceTree = "<group>"; };
+		8A4BFD3B290CDD0400522546 /* HintAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAnswerView.swift; sourceTree = "<group>"; };
+		8A54352828F7955F0003480A /* BasicSpace10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace10.json; sourceTree = "<group>"; };
+		8A56FF0F29084D4A00EFC5DD /* TestIAPStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestIAPStoreKitConfiguration.storekit; sourceTree = "<group>"; };
+		8A5BD65C29142B5700D3EA77 /* AnimalKingdom13.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom13.json; sourceTree = "<group>"; };
+		8A5BD65E29142E0E00D3EA77 /* WordSalad26.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad26.json; sourceTree = "<group>"; };
+		8A5BD66029142FF600D3EA77 /* AnimalKingdom14.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom14.json; sourceTree = "<group>"; };
+		8A5CF97328E1F803007082D1 /* Numerical9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical9.json; sourceTree = "<group>"; };
+		8A5FD61028F7A99D00BC7DAF /* AnimalKingdom4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom4.json; sourceTree = "<group>"; };
+		8A5FD61228F7AC3000BC7DAF /* AnimalKingdom5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom5.json; sourceTree = "<group>"; };
+		8A6408E228F0D93800B19B49 /* State Flowers1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "State Flowers1.json"; sourceTree = "<group>"; };
+		8A643AF4290CA3BB00AC2180 /* WordSalad20.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad20.json; sourceTree = "<group>"; };
+		8A6A270728E13BA40090857C /* Numerical4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical4.json; sourceTree = "<group>"; };
+		8A6A270928E142950090857C /* Numerical5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical5.json; sourceTree = "<group>"; };
+		8A6A270B28E150750090857C /* Numerical6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical6.json; sourceTree = "<group>"; };
+		8A6A270F28E1601C0090857C /* Numerical8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical8.json; sourceTree = "<group>"; };
+		8A6AC6BB28E684A500DC52B6 /* UnsolvedHintAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsolvedHintAnswerView.swift; sourceTree = "<group>"; };
+		8A6AC6BD28E684BD00DC52B6 /* SolvedHintAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolvedHintAnswerView.swift; sourceTree = "<group>"; };
 		8A6C058028C0D9DB00AD1CD2 /* HintAnswerPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAnswerPair.swift; sourceTree = "<group>"; };
-		8A6C058828C0ED8F00AD1CD2 /* LetterGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGroupButton.swift; sourceTree = "<group>"; };
-		8A7211CC28C7EE8900C56909 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
-		8A782CDD28BA8F1100835F3C /* ColorTheme_extension_ShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme_extension_ShapeStyle.swift; sourceTree = "<group>"; };
+		8A7710F62917F5FF00673C49 /* WordSalad31.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad31.json; sourceTree = "<group>"; };
+		8A79E6B22913F18C001DD793 /* LetterGroupButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGroupButtonData.swift; sourceTree = "<group>"; };
+		8A79E6B42913F204001DD793 /* LetterGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGroupButton.swift; sourceTree = "<group>"; };
+		8A7B46512909815800276734 /* WordSalad11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad11.json; sourceTree = "<group>"; };
 		8A851B9728B6AD0800FD4250 /* AllSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSettings.swift; sourceTree = "<group>"; };
-		8A8E36D628C12258003A5D7E /* CustomShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeView.swift; sourceTree = "<group>"; };
-		8A8E36D828C12BCB003A5D7E /* LetterGroupButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGroupButtonView.swift; sourceTree = "<group>"; };
+		8A8591C028F8F37900798F61 /* AnimalKingdom6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom6.json; sourceTree = "<group>"; };
+		8A85F90828CD64A900652C22 /* TestPuzzle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestPuzzle.json; sourceTree = "<group>"; };
+		8A870F982908E1AA00FC8974 /* WordSalad10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad10.json; sourceTree = "<group>"; };
+		8A876595290F508A007A2498 /* WordSalad22.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad22.json; sourceTree = "<group>"; };
+		8A876597290F511A007A2498 /* AnimalKingdom12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom12.json; sourceTree = "<group>"; };
+		8A8FE27B2909DAB700154EB8 /* WordSalad13.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad13.json; sourceTree = "<group>"; };
+		8A9246D328FB2FF9003D0E79 /* AnimalKingdom10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom10.json; sourceTree = "<group>"; };
+		8A9246D628FB323C003D0E79 /* U.S.History.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History.json; sourceTree = "<group>"; };
+		8A96189128D56906006FA82F /* Decode_BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode_BundleExtension.swift; sourceTree = "<group>"; };
+		8A97BB9228DFA12B00F0DCFF /* Numerical7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical7.json; sourceTree = "<group>"; };
+		8A97BB9428DFA16200F0DCFF /* Numerical1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical1.json; sourceTree = "<group>"; };
+		8A97BB9628DFA8E200F0DCFF /* Numerical2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical2.json; sourceTree = "<group>"; };
+		8A9C2F982919B00500FC2152 /* DocumentDirectoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDirectoryProvider.swift; sourceTree = "<group>"; };
+		8A9C7AF5291182520099DBB9 /* StandardPuzzlePacksDirectory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StandardPuzzlePacksDirectory.json; sourceTree = "<group>"; };
+		8A9D551B2908556C00D3F043 /* U.S.History5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History5.json; sourceTree = "<group>"; };
+		8AA15FCD291721DF00B7715E /* WordSalad29.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad29.json; sourceTree = "<group>"; };
+		8AA15FD12917239300B7715E /* WordSalad30.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad30.json; sourceTree = "<group>"; };
+		8AA15FD32917247200B7715E /* WordSalad32.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad32.json; sourceTree = "<group>"; };
+		8AA2E29F28DE8AC3004C856F /* AnimalKingdom1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom1.json; sourceTree = "<group>"; };
+		8AA2E2A128DE8E4A004C856F /* AnimalKingdom2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom2.json; sourceTree = "<group>"; };
+		8AA2E2A328DE9378004C856F /* AnimalKingdom3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom3.json; sourceTree = "<group>"; };
+		8AA2FD3728FB085700213E9B /* AnimalKingdom9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom9.json; sourceTree = "<group>"; };
+		8AA345802910A44C00764B36 /* WordSalad23.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad23.json; sourceTree = "<group>"; };
+		8AA345822910A6F400764B36 /* WordSalad24.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad24.json; sourceTree = "<group>"; };
+		8AA345842910A8D500764B36 /* WordSalad25.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad25.json; sourceTree = "<group>"; };
+		8AA5017128F58A80002439AD /* BasicSpace6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace6.json; sourceTree = "<group>"; };
+		8AA8EA3428E16F1700295C19 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		8AAA244628C77E5300EF63C2 /* DisplaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsView.swift; sourceTree = "<group>"; };
+		8AABAE5B28D8B9DC004A7B52 /* Cypher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cypher.entitlements; sourceTree = "<group>"; };
+		8AAD538E28E1FBB9006FBA79 /* Numerical10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Numerical10.json; sourceTree = "<group>"; };
+		8ABAC13E28F1C39300334C98 /* BasicSpace3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace3.json; sourceTree = "<group>"; };
+		8ABEA4232914169900A7B9B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8AC0CFEC28F64825008D793E /* BasicSpace7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace7.json; sourceTree = "<group>"; };
 		8AC104D928C6AD67007CB3B5 /* PuzzlePacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePacksView.swift; sourceTree = "<group>"; };
-		8AD62B4528BD940E009734C5 /* ActivePuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePuzzleView.swift; sourceTree = "<group>"; };
+		8AC947CD29075B67004C7EA1 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
+		8ACAAD392906E76A00054C5E /* WordSalad1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad1.json; sourceTree = "<group>"; };
+		8ACAAD3B2906E8C500054C5E /* WordSalad2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad2.json; sourceTree = "<group>"; };
+		8ACAAD3D2906EAE300054C5E /* LifeUnderTheSea6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea6.json; sourceTree = "<group>"; };
+		8ACD73B92919BD8D0007F0FE /* AnimalKingdom15.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalKingdom15.json; sourceTree = "<group>"; };
+		8ACD73BD2919BF820007F0FE /* WordSalad33.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad33.json; sourceTree = "<group>"; };
+		8AD556522916264E00D04769 /* WordSalad27.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad27.json; sourceTree = "<group>"; };
+		8ADA4521290CB8B7003099A0 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		8ADA4527290CC0C5003099A0 /* ActivePuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePuzzleView.swift; sourceTree = "<group>"; };
+		8ADA534F2908D8AE001DFAB3 /* WordSalad7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad7.json; sourceTree = "<group>"; };
+		8ADA53512908DAFC001DFAB3 /* WordSalad8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad8.json; sourceTree = "<group>"; };
+		8ADA53532908DC6E001DFAB3 /* WordSalad9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad9.json; sourceTree = "<group>"; };
+		8ADCAF9D29088B0900B5E591 /* WordSalad6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad6.json; sourceTree = "<group>"; };
 		8AE6A7BF28B678EE00EFEDD6 /* Cypher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cypher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE6A7C228B678EE00EFEDD6 /* CypherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherApp.swift; sourceTree = "<group>"; };
 		8AE6A7C428B678EE00EFEDD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8AE6A7C628B678EF00EFEDD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AE6A7C928B678EF00EFEDD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8AE6A7D028B67AED00EFEDD6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8AE6CA6928CB6FBC00B8B6B1 /* AllColorSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllColorSchemes.swift; sourceTree = "<group>"; };
-		8AFE007928C78C360035F685 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
+		8AEB6A6328F1BC4C00B4FCD4 /* BasicSpace1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace1.json; sourceTree = "<group>"; };
+		8AEB6A6528F1C0D500B4FCD4 /* BasicSpace2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicSpace2.json; sourceTree = "<group>"; };
+		8AF01617291340A300FAD72F /* PuzzlePackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePackData.swift; sourceTree = "<group>"; };
+		8AF01619291344F000FAD72F /* PuzzlePack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePack.swift; sourceTree = "<group>"; };
+		8AF0161B2913477500FAD72F /* IndividualPuzzlePackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualPuzzlePackView.swift; sourceTree = "<group>"; };
+		8AF09C75291669FF00695B4D /* WordSalad28.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad28.json; sourceTree = "<group>"; };
+		8AF7FC06290AD5E70041F199 /* WordSalad16.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WordSalad16.json; sourceTree = "<group>"; };
+		8AFF513C2902F36C00736F66 /* LifeUnderTheSea2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea2.json; sourceTree = "<group>"; };
+		8AFF513E2902F6A800736F66 /* LifeUnderTheSea3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LifeUnderTheSea3.json; sourceTree = "<group>"; };
+		8AFF51402902F98A00736F66 /* U.S.History3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History3.json; sourceTree = "<group>"; };
+		8AFF51422902FEC900736F66 /* U.S.History4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = U.S.History4.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +269,213 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A047F0E29129CD300E404E3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8A047F0F29129D1100E404E3 /* PuzzlePackDirectory.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A05332B28DF460A009EE21F /* UnthemedPuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				8A97BB9228DFA12B00F0DCFF /* Numerical7.json */,
+				8A97BB9428DFA16200F0DCFF /* Numerical1.json */,
+				8A97BB9628DFA8E200F0DCFF /* Numerical2.json */,
+				8A38E1F028DFD0A900524F80 /* Numerical3.json */,
+				8A6A270728E13BA40090857C /* Numerical4.json */,
+				8A6A270928E142950090857C /* Numerical5.json */,
+				8A6A270B28E150750090857C /* Numerical6.json */,
+				8A6A270F28E1601C0090857C /* Numerical8.json */,
+				8A5CF97328E1F803007082D1 /* Numerical9.json */,
+				8AAD538E28E1FBB9006FBA79 /* Numerical10.json */,
+			);
+			path = UnthemedPuzzles;
+			sourceTree = "<group>";
+		};
+		8A1328C128D8FD43003D3ED5 /* PuzzleTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				8A1328C228D8FD64003D3ED5 /* StandardPuzzleTemplate.json */,
+				8A06C3742911F70C00B9D904 /* StandardPuzzlePackDataTemplate.json */,
+			);
+			path = PuzzleTemplates;
+			sourceTree = "<group>";
+		};
+		8A34CBB5290F1CF80096F4E2 /* WordSaladPack3 */ = {
+			isa = PBXGroup;
+			children = (
+				8A34CBB6290F1D560096F4E2 /* WordSalad21.json */,
+				8A876595290F508A007A2498 /* WordSalad22.json */,
+				8AA345802910A44C00764B36 /* WordSalad23.json */,
+				8AA345822910A6F400764B36 /* WordSalad24.json */,
+				8AA345842910A8D500764B36 /* WordSalad25.json */,
+				8A5BD65E29142E0E00D3EA77 /* WordSalad26.json */,
+				8AD556522916264E00D04769 /* WordSalad27.json */,
+				8AF09C75291669FF00695B4D /* WordSalad28.json */,
+				8AA15FCD291721DF00B7715E /* WordSalad29.json */,
+				8AA15FD02917237600B7715E /* WordSaladPack 4 */,
+			);
+			path = WordSaladPack3;
+			sourceTree = "<group>";
+		};
+		8A3DE86D290264900094550B /* Life Under The Sea */ = {
+			isa = PBXGroup;
+			children = (
+				8A3DE86E290264C60094550B /* LifeUnderTheSea1.json */,
+				8AFF513C2902F36C00736F66 /* LifeUnderTheSea2.json */,
+				8AFF513E2902F6A800736F66 /* LifeUnderTheSea3.json */,
+				8A1FC11D29068A5E00E4A99F /* LifeUnderTheSea4.json */,
+				8A1FC11F29068C2200E4A99F /* LifeUnderTheSea5.json */,
+				8ACAAD3D2906EAE300054C5E /* LifeUnderTheSea6.json */,
+			);
+			path = "Life Under The Sea";
+			sourceTree = "<group>";
+		};
+		8A6408DF28F0D8AC00B19B49 /* U.S. Geography */ = {
+			isa = PBXGroup;
+			children = (
+				8A9246D528FB3210003D0E79 /* U.S. History */,
+				8A6408E228F0D93800B19B49 /* State Flowers1.json */,
+				8A1578A628F119D000AEBA5F /* AmericanRivers.json */,
+				8A2680CE28F19DBB00C9CF76 /* AmericanLandmarks1.json */,
+				8A2680D028F1A30600C9CF76 /* AmericanLandmarks2.json */,
+				8A2680D228F1A82B00C9CF76 /* AmericanLandmarks3.json */,
+			);
+			path = "U.S. Geography";
+			sourceTree = "<group>";
+		};
+		8A7B46502909812E00276734 /* Word Salad Pack 2 */ = {
+			isa = PBXGroup;
+			children = (
+				8A7B46512909815800276734 /* WordSalad11.json */,
+				8A23BFBF2909D6C9008F1E5E /* WordSalad12.json */,
+				8A8FE27B2909DAB700154EB8 /* WordSalad13.json */,
+				8A244475290A70600013E003 /* WordSalad14.json */,
+				8A244477290A72CD0013E003 /* WordSalad15.json */,
+				8AF7FC06290AD5E70041F199 /* WordSalad16.json */,
+				8A134D7A290C9B9000A11792 /* WordSalad17.json */,
+				8A134D7C290C9BA700A11792 /* WordSalad18.json */,
+				8A2F3D82290C4E2D00922492 /* WordSalad19.json */,
+				8A643AF4290CA3BB00AC2180 /* WordSalad20.json */,
+			);
+			path = "Word Salad Pack 2";
+			sourceTree = "<group>";
+		};
+		8A85F90728CD645F00652C22 /* jsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8A85F90828CD64A900652C22 /* TestPuzzle.json */,
+				8A9C7AF4291182010099DBB9 /* PuzzlePackNameDirectories */,
+				8A1328C128D8FD43003D3ED5 /* PuzzleTemplates */,
+				8ABA57AD28D60A8F0037FFDD /* PuzzlePacks */,
+			);
+			path = jsonFiles;
+			sourceTree = "<group>";
+		};
+		8A9246D528FB3210003D0E79 /* U.S. History */ = {
+			isa = PBXGroup;
+			children = (
+				8A9246D628FB323C003D0E79 /* U.S.History.json */,
+				8A3DE86B290261920094550B /* U.S.History2.json */,
+				8AFF51402902F98A00736F66 /* U.S.History3.json */,
+				8AFF51422902FEC900736F66 /* U.S.History4.json */,
+				8A9D551B2908556C00D3F043 /* U.S.History5.json */,
+				8A34CBB8290F1F040096F4E2 /* U.S.History6.json */,
+			);
+			path = "U.S. History";
+			sourceTree = "<group>";
+		};
+		8A9C7AF4291182010099DBB9 /* PuzzlePackNameDirectories */ = {
+			isa = PBXGroup;
+			children = (
+				8A9C7AF5291182520099DBB9 /* StandardPuzzlePacksDirectory.json */,
+			);
+			path = PuzzlePackNameDirectories;
+			sourceTree = "<group>";
+		};
+		8AA15FD02917237600B7715E /* WordSaladPack 4 */ = {
+			isa = PBXGroup;
+			children = (
+				8AA15FD12917239300B7715E /* WordSalad30.json */,
+				8A7710F62917F5FF00673C49 /* WordSalad31.json */,
+				8AA15FD32917247200B7715E /* WordSalad32.json */,
+				8ACD73BD2919BF820007F0FE /* WordSalad33.json */,
+			);
+			path = "WordSaladPack 4";
+			sourceTree = "<group>";
+		};
+		8AA2E29E28DE8A7B004C856F /* AnimalKingdomPuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				8ACAAD382906E74300054C5E /* WordSalad */,
+				8A34CBB5290F1CF80096F4E2 /* WordSaladPack3 */,
+				8AA2E29F28DE8AC3004C856F /* AnimalKingdom1.json */,
+				8AA2E2A128DE8E4A004C856F /* AnimalKingdom2.json */,
+				8AA2E2A328DE9378004C856F /* AnimalKingdom3.json */,
+				8A5FD61028F7A99D00BC7DAF /* AnimalKingdom4.json */,
+				8A5FD61228F7AC3000BC7DAF /* AnimalKingdom5.json */,
+				8A8591C028F8F37900798F61 /* AnimalKingdom6.json */,
+				8A441DB228FA230A00CCD7F0 /* AnimalKingdom7.json */,
+				8A441DB428FA261E00CCD7F0 /* AnimalKingdom8.json */,
+				8AA2FD3728FB085700213E9B /* AnimalKingdom9.json */,
+				8A9246D328FB2FF9003D0E79 /* AnimalKingdom10.json */,
+				8A1E523029076FCA00899D93 /* AnimalKingdom11.json */,
+				8A876597290F511A007A2498 /* AnimalKingdom12.json */,
+				8A5BD65C29142B5700D3EA77 /* AnimalKingdom13.json */,
+				8A5BD66029142FF600D3EA77 /* AnimalKingdom14.json */,
+				8ACD73B92919BD8D0007F0FE /* AnimalKingdom15.json */,
+			);
+			path = AnimalKingdomPuzzles;
+			sourceTree = "<group>";
+		};
 		8AAA244528C77DDD00EF63C2 /* Settings Files */ = {
 			isa = PBXGroup;
 			children = (
-				8AE6A7D028B67AED00EFEDD6 /* SettingsView.swift */,
 				8AAA244628C77E5300EF63C2 /* DisplaySettingsView.swift */,
-				8AFE007928C78C360035F685 /* CustomStepper.swift */,
-				8A7211CC28C7EE8900C56909 /* CustomPicker.swift */,
 				8A36785228CB634500094986 /* ColorScheme.swift */,
 			);
 			path = "Settings Files";
+			sourceTree = "<group>";
+		};
+		8ABA57AD28D60A8F0037FFDD /* PuzzlePacks */ = {
+			isa = PBXGroup;
+			children = (
+				8A3DE86D290264900094550B /* Life Under The Sea */,
+				8A6408DF28F0D8AC00B19B49 /* U.S. Geography */,
+				8AF4C1FE28E2137C00EE5DB3 /* EuropeanHistoryPuzzles */,
+				8A05332B28DF460A009EE21F /* UnthemedPuzzles */,
+				8AA2E29E28DE8A7B004C856F /* AnimalKingdomPuzzles */,
+			);
+			path = PuzzlePacks;
+			sourceTree = "<group>";
+		};
+		8ABEA422291415FD00A7B9B2 /* DataAccessors */ = {
+			isa = PBXGroup;
+			children = (
+				8A9C2F982919B00500FC2152 /* DocumentDirectoryProvider.swift */,
+				8A1328C628D913F9003D3ED5 /* BundleDirectoryProvider.swift */,
+			);
+			path = DataAccessors;
+			sourceTree = "<group>";
+		};
+		8ACAAD382906E74300054C5E /* WordSalad */ = {
+			isa = PBXGroup;
+			children = (
+				8ACAAD392906E76A00054C5E /* WordSalad1.json */,
+				8ACAAD3B2906E8C500054C5E /* WordSalad2.json */,
+				8A1E522C290769BD00899D93 /* WordSalad3.json */,
+				8A1E522E29076CD300899D93 /* WordSalad4.json */,
+				8A41CF9F29085CF900AF6D47 /* WordSalad5.json */,
+				8ADCAF9D29088B0900B5E591 /* WordSalad6.json */,
+				8ADA534F2908D8AE001DFAB3 /* WordSalad7.json */,
+				8ADA53512908DAFC001DFAB3 /* WordSalad8.json */,
+				8ADA53532908DC6E001DFAB3 /* WordSalad9.json */,
+				8A870F982908E1AA00FC8974 /* WordSalad10.json */,
+				8A7B46502909812E00276734 /* Word Salad Pack 2 */,
+			);
+			path = WordSalad;
 			sourceTree = "<group>";
 		};
 		8AE6A7B628B678EE00EFEDD6 = {
@@ -105,24 +497,24 @@
 		8AE6A7C128B678EE00EFEDD6 /* Cypher */ = {
 			isa = PBXGroup;
 			children = (
+				8AABAE5B28D8B9DC004A7B52 /* Cypher.entitlements */,
 				8AE6A7C228B678EE00EFEDD6 /* CypherApp.swift */,
 				8AE6A7C428B678EE00EFEDD6 /* ContentView.swift */,
-				8AD62B4528BD940E009734C5 /* ActivePuzzleView.swift */,
-				8AC104D928C6AD67007CB3B5 /* PuzzlePacksView.swift */,
-				8A8E36D828C12BCB003A5D7E /* LetterGroupButtonView.swift */,
-				8A40778A28BE13D400EA6521 /* HintAnswerView.swift */,
-				8A6C058828C0ED8F00AD1CD2 /* LetterGroupButton.swift */,
-				8A277DC028BDA62F008BA3DE /* NextPuzzlePromptView.swift */,
-				8A782CDD28BA8F1100835F3C /* ColorTheme_extension_ShapeStyle.swift */,
-				8A50401D28CB81B6008D8DE6 /* HardCodedPuzzle.swift */,
+				8A85F90728CD645F00652C22 /* jsonFiles */,
+				8AF41BED290D725600DC7BB1 /* Views */,
+				8A2ABE8028F60A3300FD0F77 /* RowsOfButtonsData.swift */,
+				8AF41BEE290D72AC00DC7BB1 /* CustomDataTypes */,
+				8A047F0E29129CD300E404E3 /* Protocols */,
+				8A96189128D56906006FA82F /* Decode_BundleExtension.swift */,
+				8ABEA422291415FD00A7B9B2 /* DataAccessors */,
+				8AC947CD29075B67004C7EA1 /* UnlockManager.swift */,
+				8ABEA4232914169900A7B9B2 /* User.swift */,
+				8A56FF0F29084D4A00EFC5DD /* TestIAPStoreKitConfiguration.storekit */,
 				8AAA244528C77DDD00EF63C2 /* Settings Files */,
 				8A15C90928B796EA008F7D2B /* Puzzle.swift */,
-				8A2DC57F28BA53EF000CC0CF /* DecodePuzzle_extension_Bundle.swift */,
-				8A8E36D628C12258003A5D7E /* CustomShapeView.swift */,
-				8A6C058028C0D9DB00AD1CD2 /* HintAnswerPair.swift */,
-				8A0D991A28B7A74500239EFB /* Fillable_protocol.swift */,
-				8A67B32A28C6C154008D36BF /* UserPuzzleData.swift */,
+				8ADA4521290CB8B7003099A0 /* GameData.swift */,
 				8A851B9728B6AD0800FD4250 /* AllSettings.swift */,
+				8AA8EA3428E16F1700295C19 /* SoundManager.swift */,
 				8AE6CA6928CB6FBC00B8B6B1 /* AllColorSchemes.swift */,
 				8AE6A7C628B678EF00EFEDD6 /* Assets.xcassets */,
 				8AE6A7C828B678EF00EFEDD6 /* Preview Content */,
@@ -136,6 +528,60 @@
 				8AE6A7C928B678EF00EFEDD6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8AEB6A6228F1BC1C00B4FCD4 /* SpacePuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB6A6328F1BC4C00B4FCD4 /* BasicSpace1.json */,
+				8AEB6A6528F1C0D500B4FCD4 /* BasicSpace2.json */,
+				8ABAC13E28F1C39300334C98 /* BasicSpace3.json */,
+				8A2B07AF28F4E86900610226 /* BasicSpace4.json */,
+				8A2B07B128F4EBC800610226 /* BasicSpace5.json */,
+				8AA5017128F58A80002439AD /* BasicSpace6.json */,
+				8AC0CFEC28F64825008D793E /* BasicSpace7.json */,
+				8A0B823128F6515300C95A36 /* BasicSpace8.json */,
+				8A0B823328F6554C00C95A36 /* BasicSpace9.json */,
+				8A54352828F7955F0003480A /* BasicSpace10.json */,
+			);
+			path = SpacePuzzles;
+			sourceTree = "<group>";
+		};
+		8AF41BED290D725600DC7BB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8ADA4527290CC0C5003099A0 /* ActivePuzzleView.swift */,
+				8A4BFD3B290CDD0400522546 /* HintAnswerView.swift */,
+				8A79E6B42913F204001DD793 /* LetterGroupButton.swift */,
+				8A277DC028BDA62F008BA3DE /* NextPuzzlePromptView.swift */,
+				8AC104D928C6AD67007CB3B5 /* PuzzlePacksView.swift */,
+				8AF0161B2913477500FAD72F /* IndividualPuzzlePackView.swift */,
+				8A06C36E2911E82A00B9D904 /* PuzzleButton.swift */,
+				8A6AC6BD28E684BD00DC52B6 /* SolvedHintAnswerView.swift */,
+				8A6AC6BB28E684A500DC52B6 /* UnsolvedHintAnswerView.swift */,
+				8A00931F2915497E00F90D56 /* SharingProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8AF41BEE290D72AC00DC7BB1 /* CustomDataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				8A6C058028C0D9DB00AD1CD2 /* HintAnswerPair.swift */,
+				8A047F122912A2BC00E404E3 /* allPuzzlePacks.swift */,
+				8AF01617291340A300FAD72F /* PuzzlePackData.swift */,
+				8A79E6B22913F18C001DD793 /* LetterGroupButtonData.swift */,
+				8AF01619291344F000FAD72F /* PuzzlePack.swift */,
+			);
+			path = CustomDataTypes;
+			sourceTree = "<group>";
+		};
+		8AF4C1FE28E2137C00EE5DB3 /* EuropeanHistoryPuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				8AEB6A6228F1BC1C00B4FCD4 /* SpacePuzzles */,
+			);
+			path = EuropeanHistoryPuzzles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +642,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFF51412902F98A00736F66 /* U.S.History3.json in Resources */,
+				8AA2E2A228DE8E4A004C856F /* AnimalKingdom2.json in Resources */,
+				8A2680D328F1A82B00C9CF76 /* AmericanLandmarks3.json in Resources */,
+				8AA2FD3828FB085700213E9B /* AnimalKingdom9.json in Resources */,
+				8ACAAD3C2906E8C500054C5E /* WordSalad2.json in Resources */,
+				8ADA53542908DC6E001DFAB3 /* WordSalad9.json in Resources */,
+				8AFF513D2902F36C00736F66 /* LifeUnderTheSea2.json in Resources */,
+				8AF09C76291669FF00695B4D /* WordSalad28.json in Resources */,
+				8A3DE86F290264C60094550B /* LifeUnderTheSea1.json in Resources */,
+				8AA2E2A428DE9378004C856F /* AnimalKingdom3.json in Resources */,
+				8AFF51432902FEC900736F66 /* U.S.History4.json in Resources */,
+				8ACD73BA2919BD8D0007F0FE /* AnimalKingdom15.json in Resources */,
+				8A1E523129076FCA00899D93 /* AnimalKingdom11.json in Resources */,
+				8ACD73BE2919BF820007F0FE /* WordSalad33.json in Resources */,
+				8A6A270C28E150750090857C /* Numerical6.json in Resources */,
+				8AF7FC07290AD5E70041F199 /* WordSalad16.json in Resources */,
+				8AAD538F28E1FBB9006FBA79 /* Numerical10.json in Resources */,
+				8A244478290A72CD0013E003 /* WordSalad15.json in Resources */,
+				8AA345832910A6F400764B36 /* WordSalad24.json in Resources */,
+				8A5CF97428E1F803007082D1 /* Numerical9.json in Resources */,
+				8A38E1F128DFD0A900524F80 /* Numerical3.json in Resources */,
+				8A5BD66129142FF600D3EA77 /* AnimalKingdom14.json in Resources */,
+				8AFF513F2902F6A800736F66 /* LifeUnderTheSea3.json in Resources */,
+				8A1578A728F119D000AEBA5F /* AmericanRivers.json in Resources */,
+				8A97BB9528DFA16200F0DCFF /* Numerical1.json in Resources */,
+				8A1FC12029068C2200E4A99F /* LifeUnderTheSea5.json in Resources */,
+				8AC0CFED28F64825008D793E /* BasicSpace7.json in Resources */,
+				8A0B823228F6515300C95A36 /* BasicSpace8.json in Resources */,
+				8A643AF5290CA3BB00AC2180 /* WordSalad20.json in Resources */,
+				8AA5017228F58A80002439AD /* BasicSpace6.json in Resources */,
+				8A23BFC02909D6C9008F1E5E /* WordSalad12.json in Resources */,
+				8A7710F72917F5FF00673C49 /* WordSalad31.json in Resources */,
+				8A2680D128F1A30600C9CF76 /* AmericanLandmarks2.json in Resources */,
+				8A54352928F7955F0003480A /* BasicSpace10.json in Resources */,
+				8AA345812910A44C00764B36 /* WordSalad23.json in Resources */,
+				8A34CBB7290F1D560096F4E2 /* WordSalad21.json in Resources */,
+				8A9C7AF6291182520099DBB9 /* StandardPuzzlePacksDirectory.json in Resources */,
+				8A34CBB9290F1F040096F4E2 /* U.S.History6.json in Resources */,
+				8A2680CF28F19DBB00C9CF76 /* AmericanLandmarks1.json in Resources */,
+				8A1328C328D8FD64003D3ED5 /* StandardPuzzleTemplate.json in Resources */,
+				8A2B07B028F4E86900610226 /* BasicSpace4.json in Resources */,
+				8ACAAD3E2906EAE300054C5E /* LifeUnderTheSea6.json in Resources */,
+				8A8FE27C2909DAB700154EB8 /* WordSalad13.json in Resources */,
+				8A6408E328F0D93800B19B49 /* State Flowers1.json in Resources */,
+				8A1E522D290769BD00899D93 /* WordSalad3.json in Resources */,
+				8A9D551C2908556C00D3F043 /* U.S.History5.json in Resources */,
 				8AE6A7CA28B678EF00EFEDD6 /* Preview Assets.xcassets in Resources */,
+				8A06C3752911F70C00B9D904 /* StandardPuzzlePackDataTemplate.json in Resources */,
+				8A1FC11E29068A5E00E4A99F /* LifeUnderTheSea4.json in Resources */,
+				8A134D7D290C9BA700A11792 /* WordSalad18.json in Resources */,
+				8A876596290F508A007A2498 /* WordSalad22.json in Resources */,
+				8A2B07B228F4EBC800610226 /* BasicSpace5.json in Resources */,
+				8A8591C128F8F37900798F61 /* AnimalKingdom6.json in Resources */,
+				8A6A270A28E142950090857C /* Numerical5.json in Resources */,
+				8A441DB528FA261E00CCD7F0 /* AnimalKingdom8.json in Resources */,
+				8ACAAD3A2906E76A00054C5E /* WordSalad1.json in Resources */,
+				8A9246D428FB2FFA003D0E79 /* AnimalKingdom10.json in Resources */,
+				8ADCAF9E29088B0900B5E591 /* WordSalad6.json in Resources */,
+				8AEB6A6428F1BC4C00B4FCD4 /* BasicSpace1.json in Resources */,
+				8A85F90928CD64A900652C22 /* TestPuzzle.json in Resources */,
+				8A97BB9328DFA12B00F0DCFF /* Numerical7.json in Resources */,
+				8AA15FCE291721DF00B7715E /* WordSalad29.json in Resources */,
+				8AD556532916264E00D04769 /* WordSalad27.json in Resources */,
+				8AA15FD22917239300B7715E /* WordSalad30.json in Resources */,
+				8A441DB328FA230A00CCD7F0 /* AnimalKingdom7.json in Resources */,
+				8A134D7B290C9B9000A11792 /* WordSalad17.json in Resources */,
+				8ADA53502908D8AE001DFAB3 /* WordSalad7.json in Resources */,
+				8A5BD65D29142B5700D3EA77 /* AnimalKingdom13.json in Resources */,
 				8AE6A7C728B678EF00EFEDD6 /* Assets.xcassets in Resources */,
+				8A870F992908E1AA00FC8974 /* WordSalad10.json in Resources */,
+				8A97BB9728DFA8E200F0DCFF /* Numerical2.json in Resources */,
+				8A5FD61128F7A99D00BC7DAF /* AnimalKingdom4.json in Resources */,
+				8A41CFA029085CF900AF6D47 /* WordSalad5.json in Resources */,
+				8AA345852910A8D500764B36 /* WordSalad25.json in Resources */,
+				8A5FD61328F7AC3000BC7DAF /* AnimalKingdom5.json in Resources */,
+				8A244476290A70600013E003 /* WordSalad14.json in Resources */,
+				8AA15FD42917247200B7715E /* WordSalad32.json in Resources */,
+				8AA2E2A028DE8AC3004C856F /* AnimalKingdom1.json in Resources */,
+				8ADA53522908DAFC001DFAB3 /* WordSalad8.json in Resources */,
+				8A7B46522909815800276734 /* WordSalad11.json in Resources */,
+				8A6A270828E13BA40090857C /* Numerical4.json in Resources */,
+				8A6A271028E1601C0090857C /* Numerical8.json in Resources */,
+				8AEB6A6628F1C0D500B4FCD4 /* BasicSpace2.json in Resources */,
+				8A876598290F511A007A2498 /* AnimalKingdom12.json in Resources */,
+				8ABAC13F28F1C39300334C98 /* BasicSpace3.json in Resources */,
+				8A5BD65F29142E0E00D3EA77 /* WordSalad26.json in Resources */,
+				8A9246D728FB323C003D0E79 /* U.S.History.json in Resources */,
+				8A1E522F29076CD400899D93 /* WordSalad4.json in Resources */,
+				8A0B823428F6554C00C95A36 /* BasicSpace9.json in Resources */,
+				8A3DE86C290261920094550B /* U.S.History2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,29 +742,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AE6A7D128B67AED00EFEDD6 /* SettingsView.swift in Sources */,
 				8AE6A7C528B678EE00EFEDD6 /* ContentView.swift in Sources */,
-				8A8E36D728C12258003A5D7E /* CustomShapeView.swift in Sources */,
+				8ADA4528290CC0C5003099A0 /* ActivePuzzleView.swift in Sources */,
+				8A047F132912A2BC00E404E3 /* allPuzzlePacks.swift in Sources */,
 				8A6C058128C0D9DB00AD1CD2 /* HintAnswerPair.swift in Sources */,
-				8A50401E28CB81B6008D8DE6 /* HardCodedPuzzle.swift in Sources */,
 				8AAA244728C77E5300EF63C2 /* DisplaySettingsView.swift in Sources */,
+				8AA8EA3528E16F1700295C19 /* SoundManager.swift in Sources */,
+				8AC947CE29075B67004C7EA1 /* UnlockManager.swift in Sources */,
 				8A851B9828B6AD0800FD4250 /* AllSettings.swift in Sources */,
-				8A6C058928C0ED8F00AD1CD2 /* LetterGroupButton.swift in Sources */,
+				8ADA4522290CB8B7003099A0 /* GameData.swift in Sources */,
+				8AF01618291340A300FAD72F /* PuzzlePackData.swift in Sources */,
 				8A277DC128BDA62F008BA3DE /* NextPuzzlePromptView.swift in Sources */,
+				8ABEA4242914169900A7B9B2 /* User.swift in Sources */,
+				8A79E6B32913F18C001DD793 /* LetterGroupButtonData.swift in Sources */,
+				8A6AC6BE28E684BD00DC52B6 /* SolvedHintAnswerView.swift in Sources */,
+				8AF0161A291344F000FAD72F /* PuzzlePack.swift in Sources */,
 				8AC104DA28C6AD67007CB3B5 /* PuzzlePacksView.swift in Sources */,
-				8A40778B28BE13D400EA6521 /* HintAnswerView.swift in Sources */,
+				8A2ABE8128F60A3300FD0F77 /* RowsOfButtonsData.swift in Sources */,
+				8A0093202915497E00F90D56 /* SharingProfileView.swift in Sources */,
+				8A6AC6BC28E684A500DC52B6 /* UnsolvedHintAnswerView.swift in Sources */,
 				8A36785328CB634500094986 /* ColorScheme.swift in Sources */,
-				8A7211CD28C7EE8900C56909 /* CustomPicker.swift in Sources */,
-				8A2DC58028BA53EF000CC0CF /* DecodePuzzle_extension_Bundle.swift in Sources */,
-				8A8E36D928C12BCB003A5D7E /* LetterGroupButtonView.swift in Sources */,
-				8AFE007A28C78C360035F685 /* CustomStepper.swift in Sources */,
-				8A0D991B28B7A74500239EFB /* Fillable_protocol.swift in Sources */,
+				8A1328C728D913F9003D3ED5 /* BundleDirectoryProvider.swift in Sources */,
+				8A9C2F992919B00500FC2152 /* DocumentDirectoryProvider.swift in Sources */,
+				8A96189228D56906006FA82F /* Decode_BundleExtension.swift in Sources */,
+				8AF0161C2913477500FAD72F /* IndividualPuzzlePackView.swift in Sources */,
 				8AE6CA6A28CB6FBC00B8B6B1 /* AllColorSchemes.swift in Sources */,
+				8A4BFD3C290CDD0400522546 /* HintAnswerView.swift in Sources */,
 				8A15C90A28B796EA008F7D2B /* Puzzle.swift in Sources */,
+				8A79E6B52913F204001DD793 /* LetterGroupButton.swift in Sources */,
 				8AE6A7C328B678EE00EFEDD6 /* CypherApp.swift in Sources */,
-				8AD62B4628BD940E009734C5 /* ActivePuzzleView.swift in Sources */,
-				8A67B32B28C6C154008D36BF /* UserPuzzleData.swift in Sources */,
-				8A782CDE28BA8F1100835F3C /* ColorTheme_extension_ShapeStyle.swift in Sources */,
+				8A06C36F2911E82A00B9D904 /* PuzzleButton.swift in Sources */,
+				8A047F1029129D1100E404E3 /* PuzzlePackDirectory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,11 +898,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cypher/Cypher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cypher/Preview Content\"";
+				DEVELOPMENT_TEAM = 3UUSRL79M7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cypher;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,11 +930,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cypher/Cypher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cypher/Preview Content\"";
+				DEVELOPMENT_TEAM = 3UUSRL79M7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cypher;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

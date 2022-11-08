@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 1",
+"hintAnswerPairs": [
+{"hint": "Creolo soup-like dish with rice vegetables, and sausage",
+"answer": "jambalayah",
+"solved": false},
+{"hint": "Mechanics and application of lfight",
+"answer": "aeronautics",
+"solved": false},
+{"hint": "Groups of stars that form recognizable outlines",
+"answer": "constellations",
+"solved": false},
+{"hint": "Water that forms cool surfaces in humid climates",
+"answer": "condensation",
+"solved": false},
+{"hint": "Foods said to incite romantic feelings",
+"answer": "aphrodisiacs",
+"solved": false},
+{"hint": "One who plays the flute",
+"answer": "flautist",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -1,0 +1,26 @@
+{
+"title": "American Landmarks 2",
+"hintAnswerPairs": [
+{"hint": "Island home of formerly-famous  immigration center",
+"answer": "Ellis",
+"solved": false},
+{"hint": "Notorious Tea Party destination",
+"answer": "Boston",
+"solved": false},
+{"hint": "Bloodiest Civil War battle site",
+"answer": "Gettysburg",
+"solved": false},
+{"hint": "Hall where the Constitution was signed",
+"answer": "Independence",
+"solved": false},
+{"hint": "Harbor where WWII battle took place",
+"answer": "Pearl",
+"solved": false},
+{"hint": "Famous fort from Mexican-American war",
+"answer": "Alamo",
+"solved": false}
+],
+"started": false,
+"finished": false
+}
+

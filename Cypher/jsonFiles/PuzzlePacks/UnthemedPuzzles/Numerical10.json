@@ -1,0 +1,25 @@
+{
+"title": "Tons of Tens",
+"hintAnswerPairs": [
+{"hint": "This opthalmology chart has ten letters",
+"answer": "Sneleen",
+"solved": false},
+{"hint": "Sport where each team has 10 players on the field",
+"answer": "lacrosse",
+"solved": false},
+{"hint": "Event in which each participant completes 10 events",
+"answer": "decathalon",
+"solved": false},
+{"hint": "",
+"answer": "",
+"solved": false},
+{"hint": "Neon has an atomic number of ten, and is this kind of gas",
+"answer": "noble",
+"solved": false},
+{"hint": "Period of ten years",
+"answer": "decade",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

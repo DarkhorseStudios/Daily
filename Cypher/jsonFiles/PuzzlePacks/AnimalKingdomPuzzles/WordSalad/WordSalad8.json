@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 8",
+"hintAnswerPairs": [
+{"hint": "A newly-hatched bird",
+"answer": "fledgling",
+"solved": false},
+{"hint": "Organ in skin that regulates hair growth",
+"answer": "follicle",
+"solved": false},
+{"hint": "Recovering or restoring from a shipwreck",
+"answer": "salvage",
+"solved": false},
+{"hint": "Formulating something new",
+"answer": "compose",
+"solved": false},
+{"hint": "Selling items to the highest bidder",
+"answer": "auction",
+"solved": false},
+{"hint": "Procedure to curl ones hair for an extended period",
+"answer": "perm",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

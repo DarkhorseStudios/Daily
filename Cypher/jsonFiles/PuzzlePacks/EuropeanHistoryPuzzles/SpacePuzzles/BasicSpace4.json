@@ -1,0 +1,25 @@
+{
+"title": "Space Space Space",
+"hintAnswerPairs": [
+{"hint": "Russian satellite",
+"answer": "Sputnik",
+"solved": false},
+{"hint": "Fatal NASA mission",
+"answer": "Columbia",
+"solved": false},
+{"hint": "Because there is no atmosphere, space is a",
+"answer": "Vacuum",
+"solved": false},
+{"hint": "Billionaire rocketry entrepreneur",
+"answer": "Bezos",
+"solved": false},
+{"hint": "The relationship between space and time exists on a",
+"answer": "continuum",
+"solved": false},
+{"hint": "Death of a star",
+"answer": "supernova",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -1,0 +1,25 @@
+{
+"title": "Life Under The Sea 1",
+"hintAnswerPairs": [
+{"hint": "Moby Dick was this kind of whale",
+"answer": "Sperm",
+"solved": false},
+{"hint": "Brown, blubbery animal with paddles, whiskers, and tusks",
+"answer": "Walrus",
+"solved": false},
+{"hint": "These fish can't stop swimming or they will die",
+"answer": "sharks",
+"solved": false},
+{"hint": "This fish is called 'Ahi' in Hawaii",
+"answer": "Tuna",
+"solved": false},
+{"hint": "Tiny fish often sold in cans",
+"answer": "Sardines",
+"solved": false},
+{"hint": "Type of vents often found in the deepest reaches of the ocean",
+"answer": "Hydrothermal",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

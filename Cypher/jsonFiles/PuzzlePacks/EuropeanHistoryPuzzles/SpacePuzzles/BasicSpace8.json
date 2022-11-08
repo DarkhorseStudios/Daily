@@ -1,0 +1,25 @@
+{
+"title": "",
+"hintAnswerPairs": [
+{"hint": "Giant cloud of gas and dust in space",
+"answer": "Nebula",
+"solved": false},
+{"hint": "small, extremely dense stars that form black holes",
+"answer": "Neutron",
+"solved": false},
+{"hint": "laws that we use to define space",
+"answer": "Physics",
+"solved": false},
+{"hint": "Particles of light emitted by stars",
+"answer": "Photons",
+"solved": false},
+{"hint": "Lights caused by cosmic waves hitting our atmosphere",
+"answer": "Northern",
+"solved": false},
+{"hint": "SETI sends these into space",
+"answer": "messages",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -1,25 +1,19 @@
-//
-//  DisplaySettingsView.swift
-//  Cypher
-//
-//  Created by Zach Tidwell on 9/6/22.
-//
+/*link to page to fix changing the background:
+https://stackoverflow.com/questions/72005730/swift-ui-i-am-trying-to-change-the-background-it-is-giving-me-an-error-underimport SwiftUI
+*/
 
 import SwiftUI
-
 struct DisplaySettingsView: View {
 
-let allSettings: AllSettings
-//let allColorSchemes: allColorSchemes
+@ObservedObject var allSettings: AllSettings
+
     var body: some View {
         NavigationView {
         ZStack {
-LinearGradient(colors: [allSettings.primaryBackgroundColor, allSettings.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
+LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
 .ignoresSafeArea()
 VStack {
 List {
-CustomStepper(allSettings: allSettings, boundValueName: "Font size", boundValue: allSettings.fontSize, incrementBy: 1)
-.padding()
 Section {
 //HStack to center text
 HStack {
@@ -35,7 +29,7 @@ ForEach(allColorSchemes, id: \.self.name) { scheme in
 Button(scheme.name) {
 allSettings.colorScheme = scheme
 }//button
-.foregroundColor(allSettings.primaryFontColor)
+.foregroundColor(allSettings.colorScheme.primaryFontColor)
 .background(.thickMaterial)
 .border(.ultraThickMaterial)
 .padding()
@@ -54,6 +48,6 @@ allSettings.colorScheme = scheme
 
 struct DisplaySettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        DisplaySettingsView(allSettings: AllSettings())
+DisplaySettingsView(allSettings: AllSettings())
     }
 }

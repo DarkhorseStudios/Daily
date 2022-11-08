@@ -1,0 +1,25 @@
+{
+"title": "",
+"hintAnswerPairs": [
+{"hint": "President NASA facility was named after",
+"answer": "Kennedy",
+"solved": false},
+{"hint": "first kind of animals sent into space",
+"answer": "flies",
+"solved": false},
+{"hint": "vehicle driven on the moon",
+"answer": "rover",
+"solved": false},
+{"hint": "An astronaut's dirty little secret",
+"answer": "Diapers",
+"solved": false},
+{"hint": "Muscles do this in low-gravity",
+"answer": "Atrophy",
+"solved": false},
+{"hint": "Astronauts who study plants in space",
+"answer": "Botanists",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

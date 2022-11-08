@@ -1,0 +1,25 @@
+{
+"title": "Shady Sixes",
+"hintAnswerPairs": [
+{"hint": "Every cell in this language is made of six dots",
+"answer": "Braille",
+"solved": false},
+{"hint": "This kind of firearm often holds six rounds",
+"answer": "revolver",
+"solved": false},
+{"hint": "This kind of prism has six sides",
+"answer": "rectangular",
+"solved": false},
+{"hint": "This instrument typically has six strings",
+"answer": "guitar",
+"solved": false},
+{"hint": "'666' is the number of the",
+"answer": "beast",
+"solved": false},
+{"hint": "Creatures with six legs and two antennae",
+"answer": "insect",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

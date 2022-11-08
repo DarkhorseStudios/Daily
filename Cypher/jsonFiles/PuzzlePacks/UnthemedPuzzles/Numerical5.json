@@ -1,0 +1,25 @@
+{
+"title": "Fives",
+"hintAnswerPairs": [
+{"hint": "A five-line poem",
+"answer": "Limerick",
+"solved": false},
+{"hint": "Ancient Egyptians believed people were made of five",
+"answer": "elements",
+"solved": false},
+{"hint": "Five is a number found in this mathematical sequence",
+"answer": "Fibonacci",
+"solved": false},
+{"hint": "King John ruled this country for only five days",
+"answer": "France",
+"solved": false},
+{"hint": "Five rings form the symbol forthis athletic event",
+"answer": "Olympics",
+"solved": false},
+{"hint": "'5G' is an iteration of a phone",
+"answer": "network",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -1,0 +1,25 @@
+{
+"title": "Nine Lives",
+"hintAnswerPairs": [
+{"hint": "Nines can be found throughout the tombs of ",
+"answer": "Egypt",
+"solved": false},
+{"hint": "This composer wrote nine symphonies",
+"answer": "Beethoven",
+"solved": false},
+{"hint": "This Greek god took nine steps before falling dead",
+"answer": "Thor",
+"solved": false},
+{"hint": "This company makes a car with a model name of '911'",
+"answer": "Porsche",
+"solved": false},
+{"hint": "Cats are said to have nine",
+"answer": "lives",
+"solved": false},
+{"hint": "The nine of diamonds is said to be the curse of this country",
+"answer": "Scotland",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

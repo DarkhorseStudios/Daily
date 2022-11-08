@@ -1,0 +1,25 @@
+{
+"title": "",
+"hintAnswerPairs": [
+{"hint": "Has five appendages",
+"answer": "starfish",
+"solved": false},
+{"hint": "Looks like it's praying",
+"answer": "Mantis",
+"solved": false},
+{"hint": "Meat-eating Amazonian fish",
+"answer": "pirahna",
+"solved": false},
+{"hint": "Color-changing reptile",
+"answer": "chameleon",
+"solved": false},
+{"hint": "Large, scavenging bird",
+"answer": "vulture",
+"solved": false},
+{"hint": "Fish breathe through",
+"answer": "Gills",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

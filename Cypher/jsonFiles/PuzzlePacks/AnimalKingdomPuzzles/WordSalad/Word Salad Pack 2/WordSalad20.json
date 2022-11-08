@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 20",
+"hintAnswerPairs": [
+{"hint": "Data measured by amount is categorized as",
+"answer": "quantitative",
+"solved": false},
+{"hint": "Key ingredient in chocolate",
+"answer": "cocoa",
+"solved": false},
+{"hint": "Name of renowned peace prize",
+"answer": "Nobel",
+"solved": false},
+{"hint": "Title Monarchs of ancient Egypt are called",
+"answer": "Pharaoh",
+"solved": false},
+{"hint": "Type of energy generated in modern dams",
+"answer": "hydroelectric",
+"solved": false},
+{"hint": "Steering mechanism of motorcycles",
+"answer": "handlebars",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

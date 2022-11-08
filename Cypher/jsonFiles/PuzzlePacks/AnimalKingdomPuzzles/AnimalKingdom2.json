@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 2",
+"hintAnswerPairs": [
+{"hint": "I use coconuts as armor",
+"answer": "octopus",
+"solved": false},
+{"hint": "I make whistles out of bundled leaves",
+"answer": "orangutans",
+"solved": false},
+{"hint": "I teach my young to floss with hair",
+"answer": "macaques",
+"solved": false},
+{"hint": "I use sticks to check water depth",
+"answer": "gorilla",
+"solved": false},
+{"hint": "I use sponge to protect my nose while digging at the sea floor",
+"answer": "dolphins",
+"solved": false},
+{"hint": "I use bait to catch fish",
+"answer": "herons",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

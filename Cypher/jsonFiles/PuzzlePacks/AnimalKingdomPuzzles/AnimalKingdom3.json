@@ -1,0 +1,25 @@
+{
+"title": "Unique Animal Capabilities",
+"hintAnswerPairs": [
+{"hint": "I've been known to paint",
+"answer": "elephants",
+"solved": false},
+{"hint": "I'm able to use and understand sign-language",
+"answer": "gorillas",
+"solved": false},
+{"hint": "My eyes change color during Winter",
+"answer": "caribou",
+"solved": false},
+{"hint": "I expel my stomach to consum my meals",
+"answer": "starfish",
+"solved": false},
+{"hint": "My blood can neutralize snake venom",
+"answer": "opossums",
+"solved": false},
+{"hint": "I can live without a head for several weeks",
+"answer": "cockroaches",
+"solved": false},
+],
+"started": false,
+"finished": false
+}

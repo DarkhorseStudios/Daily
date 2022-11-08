@@ -1,0 +1,25 @@
+{
+"title": "Lucky Number Seven",
+"hintAnswerPairs": [
+{"hint": "There are seven notes in this kind of musical scale",
+"answer": "diatonic",
+"solved": false},
+{"hint": "Indian spirituality states that we have seven of these",
+"answer": "chakras",
+"solved": false},
+{"hint": "On the seventh day of Christmas, your true love gives you",
+"answer": "swans",
+"solved": false},
+{"hint": "One of the seven wonders of the world",
+"answer": "Petra",
+"solved": false},
+{"hint": "Pythagoreans called seven the",
+"answer": "septid",
+"solved": false},
+{"hint": "The seventh card in Tarot decks is a ",
+"answer": "chariot",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

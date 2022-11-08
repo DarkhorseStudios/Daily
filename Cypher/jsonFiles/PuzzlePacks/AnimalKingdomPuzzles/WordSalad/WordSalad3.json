@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 3",
+"hintAnswerPairs": [
+{"hint": "Raccoons and Vultures are known to do this to get food",
+"answer": "scavenge",
+"solved": false},
+{"hint": "Hawaiian term for hello",
+"answer": "Aloha",
+"solved": false},
+{"hint": "To carve or shape a stick with a blade",
+"answer": "whittle",
+"solved": false},
+{"hint": "Small thorwing spear",
+"answer": "javelin",
+"solved": false},
+{"hint": "A government led by a king or queen",
+"answer": "Monarchy",
+"solved": false},
+{"hint": "The act of mindlessly drawing",
+"answer": "doodling",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

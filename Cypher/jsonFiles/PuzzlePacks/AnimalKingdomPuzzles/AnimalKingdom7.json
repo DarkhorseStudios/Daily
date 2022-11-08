@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 7",
+"hintAnswerPairs": [
+{"hint": "Small, angry dog breed",
+"answer": "Chihuahua",
+"solved": false},
+{"hint": "Rodent with a day named after it",
+"answer": "groundhog",
+"solved": false},
+{"hint": "Baby frogs",
+"answer": "Tadpoles",
+"solved": false},
+{"hint": "Turtle-like animal that lives mostly on land",
+"answer": "tortoise",
+"solved": false},
+{"hint": "Largest species of bear ",
+"answer": "Polar",
+"solved": false},
+{"hint": "Horse-like animal with an extremely long neck",
+"answer": "giraffe",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

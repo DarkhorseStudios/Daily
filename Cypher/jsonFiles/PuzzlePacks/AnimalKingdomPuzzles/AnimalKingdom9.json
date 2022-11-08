@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 9",
+"hintAnswerPairs": [
+{"hint": "Large rodent covered in spikey quills",
+"answer": "porcupine",
+"solved": false},
+{"hint": "A favorite snack for Grizzly bears",
+"answer": "Salmon",
+"solved": false},
+{"hint": "Armored rodent found in Texas",
+"answer": "Armadillo",
+"solved": false},
+{"hint": "Organism that lives on or in the body of a living host",
+"answer": "parasite",
+"solved": false},
+{"hint": "As bees visit different flowers, they are conducting",
+"answer": "pollination",
+"solved": false},
+{"hint": "Small crustaceans eaten by many whale species",
+"answer": "Krill",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

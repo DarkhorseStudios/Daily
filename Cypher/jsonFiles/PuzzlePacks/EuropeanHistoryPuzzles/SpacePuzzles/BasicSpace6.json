@@ -1,0 +1,25 @@
+{
+"title": "Basic Space 6",
+"hintAnswerPairs": [
+{"hint": "Invading aliens might make us",
+"answer": "assimilate",
+"solved": false},
+{"hint": "No atmosphere makes space a",
+"answer": "vacuum",
+"solved": false},
+{"hint": "unit of measurement for distance in space",
+"answer": "lightyear",
+"solved": false},
+{"hint": "isolated compartment between space ship segments",
+"answer": "airlock",
+"solved": false},
+{"hint": "When a space ship is leaking its atmosphere",
+"answer": "venting",
+"solved": false},
+{"hint": "",
+"answer": "Rocket engines provide a means ofpropulsion",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

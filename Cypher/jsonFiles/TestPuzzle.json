@@ -1,0 +1,16 @@
+{
+"title": "Test Puzzle",
+"hintAnswerPairs": [
+{"hint": "Cows have four of these",
+"answer": "stomachs",
+"solved": false},
+{"hint": "This word means a lot",
+"answer": "plethora",
+"solved": false},
+{"hint": "material made of treated cowhide",
+"answer": "leather",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -1,0 +1,26 @@
+
+{
+"title": "Life Under The Sea 3",
+"hintAnswerPairs": [
+{"hint": "Unicorns of the sea",
+"answer": "narwhal",
+"solved": false},
+{"hint": "Sharks with heads shaped like a common household tool",
+"answer": "hammerheads",
+"solved": false},
+{"hint": "These whales are known to hunt sharks, amongst other things",
+"answer": "Killer",
+"solved": false},
+{"hint": "These animals sustained eskimos in the harshest of environemtns",
+"answer": "seals",
+"solved": false},
+{"hint": "Variant of shrimp that moves so fast the water around it boils",
+"answer": "Mantis",
+"solved": false},
+{"hint": "Whale fat is called",
+"answer": "blubber",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

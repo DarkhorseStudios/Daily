@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 12",
+"hintAnswerPairs": [
+{"hint": "Horses are kept in",
+"answer": "stalls",
+"solved": false},
+{"hint": "Scientific study of humans",
+"answer": "anthropology",
+"solved": false},
+{"hint": "One who shoes horses",
+"answer": "farrier",
+"solved": false},
+{"hint": "What frogs are used for in biology classes",
+"answer": "dissection",
+"solved": false},
+{"hint": "Name of gorilla that learned sign language",
+"answer": "Koko",
+"solved": false},
+{"hint": "When ducklings think a human is their parent",
+"answer": "imprinting",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

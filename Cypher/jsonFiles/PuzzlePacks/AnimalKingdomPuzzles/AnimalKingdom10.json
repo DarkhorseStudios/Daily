@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 10",
+"hintAnswerPairs": [
+{"hint": "Animals without back bones are ",
+"answer": "invertebrates",
+"solved": false},
+{"hint": "Juvenile insects are often called",
+"answer": "larva",
+"solved": false},
+{"hint": "Coastal bird with large throat pouch",
+"answer": "Pelican",
+"solved": false},
+{"hint": "Large flies that bite",
+"answer": "horsefly",
+"solved": false},
+{"hint": "Single-horned animal known for charging threats",
+"answer": "rhinocerous",
+"solved": false},
+{"hint": "Blood-sucking, flying insect",
+"answer": "mosquito",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

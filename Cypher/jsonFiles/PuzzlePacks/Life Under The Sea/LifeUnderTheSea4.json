@@ -1,0 +1,25 @@
+{
+"title": "Life Under The Sea 4",
+"hintAnswerPairs": [
+{"hint": "The Great Barrier Reef is located off the coast of",
+"answer": "Australia",
+"solved": false},
+{"hint": "In the olden days, whales were hunted using",
+"answer": "Harpoons",
+"solved": false},
+{"hint": "African country known for being the homestead of modern pirates",
+"answer": "Somalia",
+"solved": false},
+{"hint": "The deepest part of the ocean is in this trench",
+"answer": "Marianas",
+"solved": false},
+{"hint": "Spanish conquistador previously thought to have discovered America for the first time",
+"answer": "Columbus",
+"solved": false},
+{"hint": "Shells known for their beautiful spiraling structure",
+"answer": "Nautilus",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

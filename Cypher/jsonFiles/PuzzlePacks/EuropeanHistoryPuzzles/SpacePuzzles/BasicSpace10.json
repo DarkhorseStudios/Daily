@@ -1,0 +1,25 @@
+{
+"title": "Fun In The Sun",
+"hintAnswerPairs": [
+{"hint": "When the moon blocks the sun",
+"answer": "eclipse",
+"solved": false},
+{"hint": "Nuclear reaction inside the sun",
+"answer": "fusion",
+"solved": false},
+{"hint": "The sun turns hydrogen into",
+"answer": "Helium",
+"solved": false},
+{"hint": "Radiation emitted by the sun",
+"answer": "Ultraviolet",
+"solved": false},
+{"hint": "",
+"answer": "",
+"solved": false},
+{"hint": "The sun's star type is Yellow",
+"answer": "Dwarf",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

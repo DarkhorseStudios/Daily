@@ -1,0 +1,25 @@
+{
+"title": "The Ocho",
+"hintAnswerPairs": [
+{"hint": "The eigth planet in our solar system is ",
+"answer": "Neptune",
+"solved": false},
+{"hint": "This mythological city had eight gates",
+"answer": "Babylon",
+"solved": false},
+{"hint": "This holiday lasts eight days",
+"answer": "Hanukkah",
+"solved": false},
+{"hint": "Numerology assigns this meaning to the number eight",
+"answer": "renewal",
+"solved": false},
+{"hint": "Eight is a lucky number in this country",
+"answer": "China",
+"solved": false},
+{"hint": "Three dimensional, shapes with eight faces are called",
+"answer": "octahedrons",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

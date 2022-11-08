@@ -1,0 +1,26 @@
+
+{
+"title": "Life Under The Sea 2",
+"hintAnswerPairs": [
+{"hint": "Reefs are made of",
+"answer": "coral",
+"solved": false},
+{"hint": "Noriously aggressive predatory fish that's long, sleek, and smaller than most sharks",
+"answer": "Barracuda",
+"solved": false},
+{"hint": "glob-shaped lifeforms covered in spines that live on the seabed",
+"answer": "urchins",
+"solved": false},
+{"hint": "Algae that gives-off light is",
+"answer": "bioluminescent",
+"solved": false},
+{"hint": "The 'unsinkable' sealiner that now rests at the bottom of the Atlantic ocean",
+"answer": "Titanic",
+"solved": false},
+{"hint": "Airtight awauatic vehicles used to study deepsea life",
+"answer": "submarines",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

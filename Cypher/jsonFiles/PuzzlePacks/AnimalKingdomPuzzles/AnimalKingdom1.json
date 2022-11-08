@@ -1,0 +1,25 @@
+{
+"title": "Wild Animals",
+"hintAnswerPairs": [
+{"hint": "Animals with forward-facing eyes are",
+"answer": "predators",
+"solved": false},
+{"hint": "Animals that eat meat and plants are",
+"answer": "omnivores",
+"solved": false},
+{"hint": "All birds are considered to be",
+"answer": "avians",
+"solved": false},
+{"hint": "Species vital to a given ecosystem's survival",
+"answer": "keystone",
+"solved": false},
+{"hint": "When one species impersonates another",
+"answer": "mimicry",
+"solved": false},
+{"hint": "Humanit's closest relative",
+"answer": "chimpanzee",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

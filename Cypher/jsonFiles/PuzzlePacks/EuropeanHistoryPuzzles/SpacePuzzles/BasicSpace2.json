@@ -1,0 +1,25 @@
+{
+"title": "Surrounding Earth",
+"hintAnswerPairs": [
+{"hint": "Thousands of these orbit the Earth",
+"answer": "satellites",
+"solved": false},
+{"hint": "Meteors burn-up upon entering Earth's",
+"answer": "Atmosphere",
+"solved": false},
+{"hint": "This gaseous layer protects us from UV radiation",
+"answer": "Ozone",
+"solved": false},
+{"hint": "First man to walk on the moon",
+"answer": "Armstrong",
+"solved": false},
+{"hint": "Old space telescope",
+"answer": "Hubble",
+"solved": false},
+{"hint": "Professional space explorers",
+"answer": "astronauts",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

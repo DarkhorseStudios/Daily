@@ -1,0 +1,25 @@
+{
+"title": "More With Four",
+"hintAnswerPairs": [
+{"hint": "The fear of the number four",
+"answer": "tetraphobia",
+"solved": false},
+{"hint": "This City burned for four days in 1666",
+"answer": "London",
+"solved": false},
+{"hint": "There are four horsemen of the",
+"answer": "apocalypse",
+"solved": false},
+{"hint": "Time is considered to be the fourth",
+"answer": "dimension",
+"solved": false},
+{"hint": "The term 'four-stroke' refers to",
+"answer": "engines",
+"solved": false},
+{"hint": "These bugs have four color receptors, as opposed to our three",
+"answer": "butterflies",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

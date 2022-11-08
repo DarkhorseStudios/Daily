@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 13",
+"hintAnswerPairs": [
+{"hint": "A craftsmen skilled in a specific area",
+"answer": "artisan",
+"solved": false},
+{"hint": "Robust variant of scissors meant for thicker substances",
+"answer": "shears",
+"solved": false},
+{"hint": "Adventureers that ascend mountains",
+"answer": "mountaineeers",
+"solved": false},
+{"hint": "One who shapes the direction of a film",
+"answer": "Director",
+"solved": false},
+{"hint": "'DJ' stands for Disc",
+"answer": "Jockey",
+"solved": false},
+{"hint": "A person who uses too many words when speaking is",
+"answer": "verbose",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

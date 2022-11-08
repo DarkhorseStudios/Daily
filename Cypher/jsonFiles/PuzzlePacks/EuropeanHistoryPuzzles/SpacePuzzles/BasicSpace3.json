@@ -1,0 +1,25 @@
+{
+"title": "Space 3",
+"hintAnswerPairs": [
+{"hint": "Space rocks that hit Earth's surface",
+"answer": "meteorites",
+"solved": false},
+{"hint": "Earth's metal core surrounds it with these fields",
+"answer": "magnetic",
+"solved": false},
+{"hint": "'Entrance' of a black hole is the event...",
+"answer": "Horizon",
+"solved": false},
+{"hint": "Theoretical tunnel through space-time",
+"answer": "Wormhole",
+"solved": false},
+{"hint": "Fastest-moving energy in the universe",
+"answer": "light",
+"solved": false},
+{"hint": "Planet closest to our sun",
+"answer": "Mercury",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

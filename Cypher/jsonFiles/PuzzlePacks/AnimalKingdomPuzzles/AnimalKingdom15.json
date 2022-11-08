@@ -1,0 +1,25 @@
+{
+"title": "Animal Kingdom 15",
+"hintAnswerPairs": [
+{"hint": "Biological information passed from parent to offspring",
+"answer": "genes",
+"solved": false},
+{"hint": "Tiny rodent sold in pet stores",
+"answer": "hamster",
+"solved": false},
+{"hint": "Fictional cross between a rabbit and deer",
+"answer": "jackelope",
+"solved": false},
+{"hint": "A cat's claws are",
+"answer": "retractable",
+"solved": false},
+{"hint": "Animal mascot of the University of Michigan",
+"answer": "wolverine",
+"solved": false},
+{"hint": "Falcomns and hawks are classified as ",
+"answer": "raptors",
+"solved": false}
+],
+"started": false,
+"finished": false
+}
