@@ -2,36 +2,78 @@ import SwiftUI
 
 //This view is for when the player has successfully completed a puzzle
 struct NextPuzzlePromptView: View {
-//Some array to store different congats messages
-@EnvironmentObject var allSettings: AllSettings
 
-    var body: some View {
-        NavigationView {
+@EnvironmentObject var allSettings: AllSettings
+//used for calculating score
+@EnvironmentObject var gameData: GameData
+@EnvironmentObject var allSheetViewBooleans: AllSheetViewBooleans
+let completionMessages = ["Nice work!", "You nailed it!", "Boom! You're finished", "Great job!"]
+
+var body: some View {
+
 ZStack {
-        LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
+        RadialGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], center: .center, startRadius: 300, endRadius: 50)
 .ignoresSafeArea()
 
-        VStack {
-        Section {
+VStack {
+HStack {
+
+Spacer()
+
+//we force-unwrap this string because it's hard-coded and shouldn't be able to fail
+Text(completionMessages.randomElement()!)
+.font(.title)
+.foregroundColor(allSettings.colorScheme.primaryFontColor)
+.padding()
+
+Text("Your score was \(gameData.generateFinalScoreForPuzzle())! There were \(gameData.buttonData.count) groups of letters, and you added them to your spelling \(gameData.puzzle.totalButtonsPressed!) times.")
+.lineLimit(nil)
+Spacer()
+}//HStack
+.padding(.vertical)
+
+Section {
+//The share button is bigger than the others, which is why it's not in an HStack
+
+ShareScoreButton()
+.clipShape(Capsule())
+
+HStack {
+Spacer()
 Button("Next Puzzle") {
-//Open Next Puzzle
+allSheetViewBooleans.userSelectedNextPuzzle = true
+allSheetViewBooleans.showingNextPuzzlePromptView = false
 }//Button
+Spacer()
+}//HStack
+
+HStack {
+Spacer()
+
 Button("Puzzlepacks") {
-//Back to the list of all puzzles
+allSheetViewBooleans.userSelectedPuzzlePacksView = true
+allSheetViewBooleans.showingNextPuzzlePromptView = false
 }//Button
+Spacer()
+}//HStack
+
+HStack {
+Spacer()
+
 Button("Main Menu") {
-//ContentView()
+allSheetViewBooleans.userSelectedMainMenu = true
+allSheetViewBooleans.showingNextPuzzlePromptView = false
 }//button
+Spacer()
+}//HStack
 }//Section
 }//VStack
 }//ZStack
-}//NavView
-.navigationTitle("Placeholder")
     }//body
 }//struct
 
 struct NextPuzzlePromptView_Previews: PreviewProvider {
     static var previews: some View {
-        NextPuzzlePromptView()
+Text("NextPuzzlePromptView preview")
     }
 }

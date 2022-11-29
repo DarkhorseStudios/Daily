@@ -1,20 +1,27 @@
 //We use SwiftUI instead of Foundation so we can post UIAccesibilityNotifications when a HintAnswerPair is set to solved.
 import SwiftUI
+//For announcing when a puzzle hint is solved
+import AVFoundation
 
 class GameData: ObservableObject {
-
+var soundManager : SoundManager
+//used in CheckSpellingAndInformCurrentPuzzle
+let speech = AVSpeechSynthesizer()
 @Published private(set) var currentSpelling = ""
 @Published private(set) var puzzle: Puzzle
-@Published private(set) var allAnswers = [String]()
-@Published private(set) var letterGroups = [String]()
 @Published private(set)var buttonData = [LetterGroupButtonData]()
 //When a button's name is added to currentSpelling, we also add its data here so we can make sure it doesn't become enabled again if the answer is corresponds to is solved.
 //If it does become solved, we then transfer the data from this array into permanentlyDisabledButtonData
 private(set) var buttonDataAppliedToCurrentSpelling = [LetterGroupButtonData]()
-private(set) var permanentlyDisabledButtonData = [LetterGroupButtonData]()
+//used for pulling letter groups from hard-coded answers and removing the spaces from those groups to get the actual answer
+let answerParser = AnswerParser()
 
 init(puzzle: Puzzle) {
+print("GameData passed \(puzzle.title) in init")
 self.puzzle = puzzle
+//this class doesn't have allSettings as a stored property, so need to figure out how I want to do this Maybe use userDefaults
+//self.soundManager = SoundManager(allSettings: self.AllSettings)
+print("GameData's puzzle is now \(puzzle.title)")
 }//init
 
 //methods
@@ -31,8 +38,15 @@ func appendButtonDataAppliedToCurrentSpelling(with data: LetterGroupButtonData) 
 buttonDataAppliedToCurrentSpelling.append(data)
 }//appendButtonDataAppliedToCurrentSpelling
 //When the letters  applied to currentSpelling end-up solving an answer for a HintAnswerPair, we transfer their data from the buttonDataAppliedToCureentSpellingArray into permanentlyDisabled so that they can't become enabled in restoreButtonVisibility
-func tranferButtonDataFromSolvedAnswerIntoPermanentlyDisabledButtonData() {
-permanentlyDisabledButtonData += buttonDataAppliedToCurrentSpelling
+func transferButtonDataFromSolvedAnswerIntoPermanentlyDisabledButtonData() {
+
+var groupsAddedToDisabled = 0
+for dataSet in buttonDataAppliedToCurrentSpelling {
+puzzle.addToDisabledLetterGroupData(dataSet)
+groupsAddedToDisabled += 1
+}//loop
+
+//empties the array
 buttonDataAppliedToCurrentSpelling = [LetterGroupButtonData]()
 }//transerData
 //Loops over the array of buttonData to find the data that corresponds with a button that was pressed so we can update its shouldBeHidden values
@@ -53,7 +67,7 @@ return matchingData
 }//accessSetOfButtonData
 func restoreButtonVisibility() {
 for dataSet in buttonData {
-if !permanentlyDisabledButtonData.contains(where: {$0.id == dataSet.id}) {
+if !puzzle.disabledLetterGroupData!.contains(where: {$0 == dataSet}) {
 if dataSet.shouldBeHidden == true {
 dataSet.setShouldBeHidden(false)
 }//conditional
@@ -63,13 +77,20 @@ dataSet.setShouldBeHidden(false)
 
 //We have to pass the new value as a parameter because of the way the onChange() modifier captures the old value before running code
 func checkSpellingAndInformCurrentPuzzle(newValue: String) {
-let lowerCasedNewValue = newValue.lowercased()
+let lowercasedNewValue = newValue.lowercased()
 var spellingMatchesAnswer = false
 for pair in puzzle.hintAnswerPairs {
-if lowerCasedNewValue == pair.answer.lowercased() {
+
+if lowercasedNewValue == answerParser.compressLetterGroupsIntoAnswer(for: pair.answer).lowercased() {
 //we're able to pass a pair here because its equatable conformance compares the answer properties
 if let indexOfPair = puzzle.hintAnswerPairs.firstIndex(of: pair) {
 puzzle.hintAnswerPairs[indexOfPair].setSolved(true)
+let utterance = AVSpeechUtterance(string: "Solved: \(lowercasedNewValue)")
+utterance.prefersAssistiveTechnologySettings = true
+speech.usesApplicationAudioSession = false
+speech.speak(utterance)
+
+DocumentDirectoryProvider().savePuzzleToDocumentDirectory(for: puzzle)
 spellingMatchesAnswer = true
 }//unwrap
 }//conditional
@@ -77,30 +98,71 @@ spellingMatchesAnswer = true
 
 //We have to make sure the buttons currentlyApplied to currentlSpelling stay disabled
 if spellingMatchesAnswer {
+transferButtonDataFromSolvedAnswerIntoPermanentlyDisabledButtonData()
 clearCurrentSpelling()
-
+soundManager.playHintSolved()
 }//conditional
+
+CheckAndSetIfPuzzleIsComplete()
 }//checkSpellingAndInformCurrentPuzzle
-func checkIfEntirePuzzleIsComplete(newValue: Int) -> Bool {
-//return value
-var completed = false
 
-if newValue == puzzle.hintAnswerPairs.count {
-puzzle.setFinished(true)
-completed = true
+func CheckAndSetIfPuzzleIsComplete() {
+
+var completedPairs = 0
+
+for i in puzzle.hintAnswerPairs {
+if i .solved {
+completedPairs += 1
 }//conditional
+}//loop
 
-return completed
+if completedPairs == puzzle.hintAnswerPairs.count {
+puzzle.setFinished(true)
+soundManager.playPuzzleCompleted()
+DocumentDirectoryProvider().savePuzzleToDocumentDirectory(for: puzzle)
+}//conditional
 }//checkIfEntirePuzzleIsComplete
-func savePuzzle(puzzle: Puzzle, puzzleFileName: String) {
-DocumentDirectoryProvider().savePuzzleToDocumentDirectory(for: puzzle, withFileName: puzzleFileName)
 
-}//save
+//Rearranges letter groups and replaces the array of letter groups with the shuffled version.
+//Used in ActivePuzzleView
+func shuffleLetterGroups() {
+}//shuffleLetterGroups
+
+//Takes-in the total number of LetterGroupButtons for a puzzle, and how many times a letterGroupButton was pressed to generate a score, like golf.
+func generateFinalScoreForPuzzle() -> Int {
+
+return puzzle.totalButtonsPressed! - buttonData.count
+}//generateFinalScoreForPuzzle
 
 //The rest of these methods pertain to initializing game information
+//Called in onAppear of Active Puzzle view when players want to be able to get a score for their puzzle
+func initializeHardCodedData() {
+
+//Because the answers are stored with sapces in their name, we'll have to remove them to set the answers for the puzzle
+var allAnswersSeparatedBySpaces = [String]()
+
+//We remove the spaces from the answers when we check the spelling, and inside the Solved HintAnswerViews using the AnswerParser type
+for i in puzzle.hintAnswerPairs {
+allAnswersSeparatedBySpaces.append(i.answer)
+}//loop
+let letterGroups = answerParser.parseLetterGroups(in: allAnswersSeparatedBySpaces)
+
+for group in letterGroups {
+buttonData.append(LetterGroupButtonData(name: group))
+}//loop
+for dataSet in buttonData {
+//we use names instead of id because they get different UUIDs whenever they are initialized
+if puzzle.disabledLetterGroupData!.contains(where: {$0.name == dataSet.name}) {
+print("initialize hardcoded data just hid \(dataSet.name)")
+dataSet.setShouldBeHidden(true)
+}//nested conditional
+}//nested loop
+
+}//initialize hardcoded data
+
 //This takes all of the answers, converts them to letter groups, fills button data, and appends the array of button data
 //Called in onAppear of ActivePuzzleView
-func initializeData() {
+func initializeRandomizedData() {
 var allAnswers = [String]()
 for i in puzzle.hintAnswerPairs {
 allAnswers.append(i.answer)
@@ -151,108 +213,164 @@ return answerAsLetterGroups
 
 //These next two functions handle words differently if they contain an even or odd number of letters, and depending on the size of the word
 func splitEven(word: String) -> [String] {
-print("Starting SplitEven for \(word)")
+//print("calling split Even")
 //returned array
 var wordAsLetterGroups = [String]()
 let inputWordAsCharacters = Array(word)
 let totalLetterCount = inputWordAsCharacters.count
-print("letter count for \(word) is \(totalLetterCount)")
-//if the word is less than or equal to 6 letters, we strictly split it into groups of two letters. If it's the
-//if the word is bigger than 6 letters, we give the code the option to split it into multiple three-letter groups.
-
-//if totalLetterCount <= 6 {
 //represents the base of the index range we want to access.
 var baseIndex = 0
 
-//We use baseIndex + 1 for the compared value because it's the bottom end of the range of characters we're getting the array of characters
-while (baseIndex + 1) < totalLetterCount{
-let newGroup = String(inputWordAsCharacters[baseIndex...baseIndex + 1])
+while baseIndex < totalLetterCount - 1{
+//print("At start, baseIndex: \(baseIndex), totalCount: \(totalLetterCount)")
+//While there are 6 or more letters remaining, we let the function split the word into groups of two and three
+if baseIndex + 5 < totalLetterCount {
+
+let newGroup = makeRandomGroupOfTwoOrThree(from: inputWordAsCharacters, startingAt: baseIndex)
 wordAsLetterGroups.append(newGroup)
+baseIndex += newGroup.count
+
+//if there are exactly 6 letters left, we either make two groups of three or three groups of two
+} else if baseIndex + 5 == totalLetterCount - 1 {
+var timesLoopHasRun = 0
+//Makes two groups of three so we don't end-up with an odd number of letters
+if Bool.random() {
+while timesLoopHasRun <= 2 {
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 2]))
+baseIndex += 3
+timesLoopHasRun += 1
+}//while loop
+
+} else { //Makes three groups of two so we don't end-up with an odd number of letters remaining
+while timesLoopHasRun <= 3 {
+
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
 baseIndex += 2
+timesLoopHasRun += 1
+}//while loop
+}//conditional for multiple groups of two or three
+
+} else if baseIndex + 4 == totalLetterCount - 1 {
+let newGroups = makeOneGroupOfTwoAndOneGroupOfThree(from: inputWordAsCharacters, startingAt: baseIndex)
+wordAsLetterGroups.append(newGroups[0])
+wordAsLetterGroups.append(newGroups[1])
+baseIndex += (newGroups[0].count + newGroups[1].count)
+
+//There should only be 4 or less letters left, so we split into groups of two
+} else {
+
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
+baseIndex += 2
+}//conditionals checking how many letters are left
 }// while loop
-/*
-//} else {// totalLetterCount >= 8
-//We have to increment baseIndex differently bu deciding ahead of time if the word will have some letter groups of three letters. If we have one group of three, we have to have at least two to end-up with an even number of letter groups
-//}//lop for more than 6 letters
-*/
-print("splitEven is returning letter groups for \(word)")
-print(wordAsLetterGroups.count)
+//print("ending splitEven()")
 return wordAsLetterGroups
-}//func
+}//splitEven
 
 func splitOdd(word: String) -> [String] {
+//print("starting splitOdd()")
 //returned array
 var wordAsLetterGroups = [String]()
 let inputWordAsCharacters = Array(word)
 let totalLetterCount = inputWordAsCharacters.count
 var baseIndex = 0
 
-//Need an intelligent loop to establish groups of two and three letters
-var safetyCount = 0
-//** when I would only miss one letter per word , this conditional was baseIndex + 1 = totalLetterCount + 1
-while baseIndex + 2 < totalLetterCount && safetyCount < 10 {
+while baseIndex < totalLetterCount {
 
-//Also need to check if there are 5 letters left in the word.
+//if there are more than 5 letters remaining in the word, we let the code randomly decide between groups of two and three
+if baseIndex + 4 >= inputWordAsCharacters.count {
 
-//First, we check if making another group of two or three would leed to an out-of-bounds error, or end-up with a remainder of one determine what size the next letter group can be
-// first check makes sure that if there are only four letters remaining to be split into letterGroups, we make a group of two so we dont't try and make a group of three and end-up with one letter leftover.
+let newGroup = makeRandomGroupOfTwoOrThree(from: inputWordAsCharacters, startingAt: baseIndex)
+wordAsLetterGroups.append(newGroup)
+baseIndex += newGroup.count
 
-if baseIndex + 3 == totalLetterCount - 1 {
-print("splitOdd going down route for two groups of two with baseIndex starting at \(baseIndex)")
-//We do this twice so that we don't have to cycle the loop and conditionals just to make the last group of two
-let group = String(inputWordAsCharacters[baseIndex...baseIndex + 1])
-print("splitOdd's conditional  adding \(group) ")
-wordAsLetterGroups.append(group)
+//First, we check if there are only five letters left so we can make one group of two and one group of three
+} else if baseIndex + 4 == totalLetterCount - 1 {
+
+//if this random bool is true, we make a group of three before tthe group of two. If false, we do the opposite
+if Bool.random() {
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 2]))
+baseIndex += 3
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
 baseIndex += 2
-let secondGroup = String(inputWordAsCharacters[baseIndex...baseIndex + 1])
-print("splitOdd's conditional for two groups of two attempting to add \(secondGroup)")
-wordAsLetterGroups.append(secondGroup)
+}else {
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
+baseIndex += 2
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 2]))
+baseIndex += 3
+}//conditional deciding how we split up the five remaining letters
+
+//Next, we check if making another group of two or three would leed to an out-of-bounds error, or end-up with a remainder of one determine what size the next letter group can be
+// check makes sure that if there are only four letters remaining to be split into letterGroups, we make a group of two so we dont't try and make a group of three and end-up with one letter leftover.
+} else if baseIndex + 3 == totalLetterCount - 1 {
+//We do this twice so that we don't have to cycle the loop and conditionals just to make the last group of two
+
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
+baseIndex += 2
+wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
 baseIndex += 2
 
 //Second check makes sure that if there are only three letters left in the word, we make a group of three
 } else if baseIndex + 2 == totalLetterCount - 1 {
-print("SplitOdd's random assignment beginning with baseIndex : \(baseIndex)")
 //makes a group of three
-let group = String(inputWordAsCharacters[baseIndex...baseIndex + 2])
-print("splitOdd adding \(group)")
+
 wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 2]))
 baseIndex += 3
 
-//Otherwise, we just let the game decide if it's going to make a group of two or three
-} else {
-print("splitOdd() randomly deciding for group of two or three")
-if Bool.random() {
-print("splitOdd() making group of two")
-let group = String(inputWordAsCharacters[baseIndex...baseIndex + 1])
-print("splitodd randomly adding \(group)")
+//otherwise, there should only be two letters remaining, so we make a group of two
+}else {
+
 wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 1]))
 baseIndex += 2
-} else {
-print("splitOdd() making group of three")
-//**I think the issue is here
-let group = String(inputWordAsCharacters[baseIndex...baseIndex + 2])
-print("split odd randomly adding \(group)")
-wordAsLetterGroups.append(String(inputWordAsCharacters[baseIndex...baseIndex + 2]))
-baseIndex += 3
-}//nested conditional with random Bool
 }//conditional
-print("basIndex at end of loop is \(baseIndex)")
-print("safetyCount is \(safetyCount) before incrementing")
-safetyCount += 1
 }//loop
-print("splitOdd() returning lettergroups for \(word)")
-print("splitOdd input word size: \(word.count)")
-print("splitOdd returning word with size: \(wordAsLetterGroups.count)")
+//print("end splitOdd()")
 return wordAsLetterGroups
-}//func
-func GetAllAnswersFromCurrentPuzzle() {
-var placeholderArray = [String]()
+}//splitOdd
+
+//used in splitEven() and splitOdd(). To inverement the baseIndex in those methods, we just get the size of the string returned by this function
+func makeRandomGroupOfTwoOrThree(from inputWordAsCharacters: [Character], startingAt index: Int) -> String {
+//print("start randomGroupOfTwoOrThree")
+
+//returned value
+var newLetterGroup = String()
+if Bool.random() {
+newLetterGroup = String(inputWordAsCharacters[index...index + 1])
+} else {
+newLetterGroup = String(inputWordAsCharacters[index...index + 2])
+}//conditional
+//print("end random groupOfTwoOrThree")
+return newLetterGroup
+}//makeRandomGroupOfTwoOrThree
+
+//used in splitEven() and splitOdd() for whenever there are exactly five letters left in a word.
+func makeOneGroupOfTwoAndOneGroupOfThree(from inputWordAsCharacters: [Character], startingAt index: Int) -> [String] {
+//print("starting maekOnGroupOfTwoAndOneGroupOfThree")
+//return value
+var bothLetterGroups = [String]()
+
+if Bool.random() {
+bothLetterGroups.append(String(inputWordAsCharacters[index...index + 1]))
+bothLetterGroups.append(String(inputWordAsCharacters[index + 2...index + 4]))
+
+} else {
+
+bothLetterGroups.append(String(inputWordAsCharacters[index...index + 2]))
+bothLetterGroups.append(String(inputWordAsCharacters[index + 3...index + 4]))
+}//conditional
+//print("end makeOneGroupOfTwoAndOneOfThree")
+return bothLetterGroups
+}//makeOneGroupOfTwoAndOneGroupOfThree
+
+func GetAllAnswersFromCurrentPuzzle() -> [String] {
+
+//return value
+var allAnswersWithSpaces = [String]()
 for pair in puzzle.hintAnswerPairs {
-print(pair.answer)
-placeholderArray.append(pair.answer)
-//self.allAnswers.append(pair.answer)
+allAnswersWithSpaces.append(pair.answer)
 }//loop
-self.allAnswers = placeholderArray
+
+return allAnswersWithSpaces
 }//func
 //Used in initializeData(). Determines the number of buttons per row
 func getNumberOfButtonsPerRow(allLetterGroups: [String]) -> [Int] {

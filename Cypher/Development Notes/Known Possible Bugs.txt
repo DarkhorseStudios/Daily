@@ -1,0 +1,4 @@
+This is a list of possible bugs:
+
+1:DocumentDirectoryProvider.loadPuzzle()
+-When the puzzles haven't been saved to the DocumentDirectory yet, and we save a puzzle from the bundle, then load it from the document directory, I have to use the fileName property of the puzzle, rather than the fromFileWithName parameter that's passed-in as an argument, and I'm not sure why. '''

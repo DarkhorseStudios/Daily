@@ -5,7 +5,11 @@ struct IndividualPuzzlePackView: View {
 
 @EnvironmentObject var allSettings: AllSettings
 let puzzlePackTitle: String
-@State private(set) var puzzlesInPack: [Puzzle]
+@State private(set) var puzzlesInPack: [Puzzle] {
+didSet {
+print("IndividualPuzzlePackView passed the following puzzles: \(puzzlesInPack)")
+}//didSet
+}//puzzlesInPack
 
 var body: some View {
 

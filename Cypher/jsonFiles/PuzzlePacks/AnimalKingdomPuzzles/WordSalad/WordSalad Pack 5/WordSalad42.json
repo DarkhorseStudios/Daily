@@ -1,0 +1,25 @@
+{
+"title": "Word Salad 42",
+"hintAnswerPairs": [
+{"hint": "Where you get haircuts",
+"answer": "Bar be rsh op",
+"solved": false},
+{"hint": "A change made to something",
+"answer": "mo dif ica ti on",
+"solved": false},
+{"hint": "Lie-detector test",
+"answer": "po lyg ra ph",
+"solved": false},
+{"hint": "Study of the Earth's surface",
+"answer": "ge ogr ap hy",
+"solved": false},
+{"hint": "The end of a story",
+"answer": "Con cl usi on",
+"solved": false},
+{"hint": "The white-space at the beginning of a paragraph",
+"answer": "In de nta ti on",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

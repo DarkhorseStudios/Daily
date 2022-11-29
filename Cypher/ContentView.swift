@@ -5,21 +5,18 @@
 import SwiftUI
 
 struct ContentView: View {
-/* Things to fix:
-NavLinks are different sizes. Need a way to standardize the,. probably using geometryReader
--Maybe track down some different fonts.
-*/
 //This is passed into the environment
 @StateObject var allSettings = AllSettings()
 //We initialize PuzzlePackData in ContentView so that it is all available and only needs to be intialized when the app opens
 @StateObject var allPuzzlePacks = AllPuzzlePacks()
+//contains all of the booleans that are passed to sheet views as bindings so we can dismiss multiple views in a stack
+@StateObject var allSheetViewBooleans = AllSheetViewBooleans()
 
 //This wrapper accesses user defaults, but allows us to store a default value, unlike directly accessing UserDefaults
 //Additionally, this wrapper is monitored jiust like @State
 //@AppStorage("exampleKey") private var someSaveValue = "99"
-@State private var showingPuzzlePacksView = false
     var body: some View {
-//NavigationView {
+NavigationView {
 ZStack{
 RadialGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], center: .center, startRadius: 300, endRadius: 50)
 .ignoresSafeArea()
@@ -33,6 +30,7 @@ Text("Welcome to Cypher")
 .font(.largeTitle.bold())
 .foregroundColor(allSettings.colorScheme.primaryFontColor)
 .background(.clear)
+.accessibilityHeading(.h1)
 Spacer()
 }//HStack
 
@@ -43,24 +41,28 @@ HStack {
 Spacer()
 //These buttons are contained in a group so I can apply modifiers to each of them with less code
 Group {
-Button("Test Puzzle View") {
-showingPuzzlePacksView.toggle()
-}//button
-.sheet(isPresented: $showingPuzzlePacksView) {
-PuzzlePacksView(showing: $showingPuzzlePacksView)
-}//sheet
 VStack {
 //For now, each of the buttons is the same. However, I want to make the New Game button more prominent, and have it be replaced with Resume Game if a saved game exists//Should I put these smaller buttons in a section?
-NavigationLink("Puzzles") {
-//PuzzlePacksView()
+
+NavigationLink() {
+PuzzlePacksView()
+} label: {
+	Button("Puzzles") {
+allSheetViewBooleans.showingPuzzlePacksView = true
+}//button
+.font(.title)
+.clipShape(Capsule())
 }//navLink
-.font(.title)
-.foregroundColor(.black)
-NavigationLink("Settings") {
+
+NavigationLink() {
 DisplaySettingsView(allSettings: allSettings)
-}//NavLink
+} label: {
+	Button("Settings") {
+//has no functionality, is only here to make the nav link look like a buton
+}//Button
 .font(.title)
-.foregroundColor(.black)
+.clipShape(Capsule())
+}//NavLink
 }//VStack
 }//Group
 
@@ -81,11 +83,13 @@ Spacer()
 }//ZStack
 .navigationTitle("Welcome to Cypher")
 .font(.largeTitle)
-//}//NavView
+}//NavView
 .onAppear() {
+//PuzzlePacksView needs this to be initialized to draw the DisclosureGrops for puzzle packs, and GameData needs it to intialize data for puzzles
 allPuzzlePacks.initializeData()
 }//onAppear
 .environmentObject(allSettings)
+.environmentObject(allSheetViewBooleans)
 .environmentObject(allPuzzlePacks)
 
 }//body

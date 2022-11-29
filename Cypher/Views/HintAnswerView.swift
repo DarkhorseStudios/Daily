@@ -13,10 +13,10 @@ struct HintAnswerView: View {
 ForEach(gameData.puzzle.hintAnswerPairs, id: \.self.answer) { pair in
 if !pair.solved {
 UnsolvedHintAnswerView(pair: pair)
-.transition(.slide)
+.transition(.asymmetric(insertion: .push(from: .leading), removal: .move(edge: .trailing)))
 } else {
 SolvedHintAnswerView(pair: pair)
-.transition(.slide)
+.transition(.asymmetric(insertion: .push(from: .leading), removal: .move(edge: .trailing)))
 .onAppear() {
 UIAccessibility.post(notification: .announcement, argument: "Solved")
 }//onAppear

@@ -5,6 +5,7 @@ struct LetterGroupButton: View {
 
 @EnvironmentObject var allSettings:AllSettings
 @EnvironmentObject var gameData: GameData
+private var speech = AVSpeechSynthesizer()
 @State private var model: LetterGroupButtonData
 
 //Have to use an initializer because of the access level of model
@@ -15,22 +16,27 @@ self.model = model
 var body: some View {
 
 Button(model.name.uppercased()) {
+if model.shouldBeHidden == false {
 gameData.appendCurrentSpelling(with: model.name)
 gameData.appendButtonDataAppliedToCurrentSpelling(with: model)
+gameData.puzzle.incrementTotalButtonsPressed()
+withAnimation {
+//also sets opacity and rotationAmount
 model.setShouldBeHidden(true)
+}//WithAnimation
+}//conditional checking model.shouldBeHidden
 }//button
-.disabled(model.shouldBeHidden)
-.accessibilityLabel(model.name.lowercased())
-.speechSpellsOutCharacters(true)
+.opacity(model.appearanceData.opacity)
+.accessibilityLabel(model.appearanceData.accessibilityLabel)
+.speechSpellsOutCharacters(model.appearanceData.accessibilityLabelShouldBeReadAsCharacters)
+.rotation3DEffect(.degrees(model.appearanceData.rotationAmount), axis: (x: 1, y: 0, z: 0))
 .accessibilityAction(.magicTap) {
-
-let speech = AVSpeechSynthesizer()
 var stringToSay = "Current spelling: \(gameData.currentSpelling)"
 
 if gameData.currentSpelling.isEmpty {
 stringToSay = "Current spelling is empty"
 }//conditional
-var utterance = AVSpeechUtterance(string: stringToSay)
+let utterance = AVSpeechUtterance(string: stringToSay)
 utterance.prefersAssistiveTechnologySettings = true
 
 //Routes this speech to the system, which automatically  uses audio ducking and things like that.

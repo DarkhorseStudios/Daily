@@ -8,7 +8,7 @@ struct DisplaySettingsView: View {
 @ObservedObject var allSettings: AllSettings
 
     var body: some View {
-        NavigationView {
+
         ZStack {
 LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
 .ignoresSafeArea()
@@ -37,12 +37,28 @@ allSettings.colorScheme = scheme
 }//Group
 }//Section
 .navigationTitle("Display Color Schemes")
+
+Section {
+Button() {
+allSettings.soundEffectsEnabled.toggle()
+} label: {
+Toggle("Sound Effects", isOn: $allSettings.soundEffectsEnabled)
+if allSettings.soundEffectsEnabled {
+//Slider for volume
+}//conditional
+}//button
+
+Button() {
+} label: {
+Toggle("Music Enabled", isOn: $allSettings.musicEnabled)
+}//button
+}//section
+.navigationTitle("Audio Settings")
 }//List
 .navigationTitle("What would you like to change?")
 }//VStack
 }//ZStack
-}//NavView
-.navigationTitle("Display Settings")
+.navigationTitle("Settings")
     }//body
 }//struct
 

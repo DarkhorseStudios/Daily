@@ -4,18 +4,24 @@ import AVFoundation
 struct ActivePuzzleView: View {
 
 @EnvironmentObject var allSettings: AllSettings
+@EnvironmentObject var allSheetViewBooleans: AllSheetViewBooleans
 //This is passed-in the PuzzleButton in the .sheet modifier that initializes this view
 @ObservedObject var gameData: GameData
-@Binding var showing: Bool
-@State private var puzzleIsComplete = false
-@State private var speech = AVSpeechSynthesizer()
+private(set) var speech = AVSpeechSynthesizer()
+
+init(gameData: GameData) {
+print("ActivePuzzleView passed \(gameData.puzzle.title) in init.")
+self.gameData = gameData
+print("ActivePuzzleView's game data holds \(self.gameData.puzzle.title) at end of init")
+}//init
 
 var body: some View {
 
-NavigationView {
 ZStack {
 LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
 VStack {
+
+Spacer()
 
 HintAnswerView()
 
@@ -42,38 +48,44 @@ Spacer()
 }//section
 Spacer()
 
-List {
+Spacer()
+//Centers the shuffle button
+HStack {
+
+Spacer()
+
+Button("Shuffle LetterGroups") {
+gameData.shuffleLetterGroups()
+}//button
+
+Spacer()
+}//Hstack
+Text("Should be \(gameData.buttonData.count) buttons")
 ForEach(gameData.buttonData, id: \.self.id) { dataSet in
 LetterGroupButton(model: dataSet)
+
 }//loop
-}//list
 .background(.clear)
+
 }//Vstack
 }//ZStack
-.navigationTitle(gameData.puzzle.title)
-
 .toolbar {
-//ToolbarItemGroup {
-ToolbarItem(placement: .navigationBarLeading) {
 
-Button("Back") {
-showing = false
-}//Back button
-}//ToolbarItem
 ToolbarItem(placement: .navigationBarTrailing) {
 Button("Help") {
-Text("Show help for playing the game")
+//show help for playing through puzzles
 }//help button
 }//ToolbarItem
 }//toolbar
-}//NavView
+.navigationTitle(gameData.puzzle.title)
+
 .accessibilityAction(.magicTap) {
 var stringToSay = "Current spelling: \(gameData.currentSpelling)"
 
 if gameData.currentSpelling.isEmpty {
 stringToSay = "Current spelling is empty"
 }//conditional
-var utterance = AVSpeechUtterance(string: stringToSay)
+let utterance = AVSpeechUtterance(string: stringToSay)
 utterance.prefersAssistiveTechnologySettings = true
 
 //Routes this speech to the system, which automatically  uses audio ducking and things like that.
@@ -83,27 +95,26 @@ speech.speak(utterance)
 .environmentObject(allSettings)
 .environmentObject(gameData)
 .onAppear() {
-gameData.initializeData()
+gameData.initializeHardCodedData()
+print("From ActivePuzzleView onAppear(): GameData initialized with puzzle \(gameData.puzzle.title)")
+print("From ActivePuzzleView onAppear(), puzzle has \(gameData.puzzle.disabledLetterGroupData!.count) disabled groups.")
 }//onAppear
-//.onChange(of: gameData.currentSpelling, perform: gameData.checkSpellingAndInformCurrentPuzzle(newValue:))
+.onDisappear() {
+allSheetViewBooleans.showingActivePuzzleView = false
+DocumentDirectoryProvider().savePuzzleToDocumentDirectory(for: gameData.puzzle)
+}//onDisappear
 .onChange(of: gameData.currentSpelling) { newValue in
 gameData.checkSpellingAndInformCurrentPuzzle(newValue: newValue)
+//The CheckSpellingInCurrentPuzzle() function will also set the puzzle to finished upon completion, so we just check if it's true
 if gameData.puzzle.finished {
-puzzleIsComplete = true
-}//conditional
-}
-/*.onChange(of: gameData.numberOfHintsSolvedInCurrentPuzzle) { newValue in
-if gameData.checkIfEntirePuzzleIsComplete(newValue: newValue) {
-//trigger congrats and next puzzle prompt
-//maybe use a bool to trigger a sheet to be drawn.
-puzzleIsComplete = true
+allSheetViewBooleans.showingNextPuzzlePromptView = true
 }//conditional
 }//onChange
-.sheet(isPresented: puzzleIsComplete)
+.sheet(isPresented: $allSheetViewBooleans.showingNextPuzzlePromptView) {
 NextPuzzlePromptView()
-.environmentObject(allSettings)
+.environmentObject(allSheetViewBooleans)
+.environmentObject(gameData)
 }//sheet
-*/
 }//body
 }//struct
 

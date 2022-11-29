@@ -1,5 +1,5 @@
-import Foundation
 import SwiftUI
+import AVFoundation
 
 class HintAnswerPair: Codable, Equatable, ObservableObject {
 //== has two initializers; the required initializer for ObservableObject Conformance, and a regular one

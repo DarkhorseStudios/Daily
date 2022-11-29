@@ -1,11 +1,3 @@
-//
-//  ColorScheme.swift
-//  Cypher
-//
-//  Created by Zach Tidwell on 9/9/22.
-//
-
-import Foundation
 import SwiftUI
 
 struct ColorScheme {

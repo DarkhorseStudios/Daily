@@ -18,17 +18,14 @@ let arrayOfPuzzlePackDataObjects: [PuzzlePackData]  = Bundle.main.decode(fromFil
 
 for individualDataSet in arrayOfPuzzlePackDataObjects {
 var indexInAllPuzzleFileNames = 0
-//We firsst find all of the puzzles from the current directory, and add them to this array. Then we iterate over its data, organizing them by the number in their file name so that they are organized in the IndividualPuzzlePacksView
-var puzzleFileNamesFromCurrentDirectory = [String]()
-var tempArrayOfPuzzleFileNamesInThisPack = [String]()
+//We iterate over the array of all puzzleFile names to find ones that belong to the current series, then add them to this array for separating them into packs and setting edition names
+var arrayOfPuzzleFileNamesInThisPack = [String]()
 
 for puzzleFileName in allPuzzleFileNames {
 
 if puzzleFileName.hasPrefix(individualDataSet.fileNameWithoutNumbers) {
-//temp code
-tempArrayOfPuzzleFileNamesInThisPack.append(puzzleFileName)
-//end temp code
-puzzleFileNamesFromCurrentDirectory.append(puzzleFileName)
+
+arrayOfPuzzleFileNamesInThisPack.append(puzzleFileName)
 
 guard let indexOfPuzzlePackFile = allPuzzleFileNames.firstIndex(of: puzzleFileName) else {
 print("This shouldn't be possible, but AllPuzzlePacks init() faild to find the index of \(puzzleFileName) in the array of allPuzzleFileNames")
@@ -40,20 +37,21 @@ allPuzzleFileNames.remove(at: indexOfPuzzlePackFile)
 indexInAllPuzzleFileNames += 1
 }//loop iterating over allPuzzleFileNames
 
-separateFilesAndFillPacks(puzzlePackData: individualDataSet, allPuzzleFileNamesInPack: tempArrayOfPuzzleFileNamesInThisPack)
+separateFilesAndFillPacks(puzzlePackData: individualDataSet, allPuzzleFileNamesInPack: arrayOfPuzzleFileNamesInThisPack)
 }//nested loop iterating over differentPuzzlePackData from current directory
 }//loop iterating over directoryFileNames
 
-applyEditionToPuzzlePackTitles()
+applyEditionsToPuzzlePackTitles()
 }// initialize data
 
+//Is passed the data for all puzzles in a single series of puzzles in initializeData()
 func separateFilesAndFillPacks(puzzlePackData: PuzzlePackData, allPuzzleFileNamesInPack: [String]) {
 
 var sortedFileNames = [String]()
 //We use 0 instead of 1 so that we don't get an untraceable crash if the array of file names is empty.
 for i in 0...allPuzzleFileNamesInPack.count {
 
-for var fileName in allPuzzleFileNamesInPack {
+for fileName in allPuzzleFileNamesInPack {
 
 if fileName == puzzlePackData.fileNameWithoutNumbers + "\(i).json" {
 sortedFileNames.append(fileName)
@@ -65,16 +63,18 @@ var fullPuzzlesInThisSet = 0
 //We do this math to set a limit of ten puzzles per pack
 //May cause an error because the upper bound of the range may return a float in the event that a puzzle pack has a total number of puzzles not divisible by 10
 for i in 0..<(sortedFileNames.count / 10) {
-print(" i loop running iwth i as \(i)")
-print(sortedFileNames)
+
 var puzzlesInPack = [Puzzle]()
 for j in 0...9 {
 
 //We need this conditional because the index pulled from sortedFileNames will be the same the first times through the loop, if fullPuzzles in this set = 0 or 1
+let documentDirectoryProvider = DocumentDirectoryProvider()
 if fullPuzzlesInThisSet == 0 {
-puzzlesInPack.append(Puzzle(fromFileWithName: sortedFileNames[j]))
+//puzzlesInPack.append(Puzzle(fromFileWithName: sortedFileNames[j]))
+puzzlesInPack.append(documentDirectoryProvider.tryLoadingPuzzleFromDocumentDirectory(using: sortedFileNames[j]))
 } else {
-puzzlesInPack.append(Puzzle(fromFileWithName: sortedFileNames[j + (i * 10)]))
+//puzzlesInPack.append(Puzzle(fromFileWithName: sortedFileNames[j + (i * 10)]))
+puzzlesInPack.append(documentDirectoryProvider.tryLoadingPuzzleFromDocumentDirectory(using: sortedFileNames[j + (i * 10)]))
 }//conditional
 }//nested loop
 
@@ -83,29 +83,49 @@ fullPuzzlesInThisSet += 1
 }//loop
 }//separateFilesAndFillPacks
 
-///Called in the above method to label PuzzlePackTitles appropriately, including the dition
-//After we retrieve the names from the puzzle pack directory, we send them here so they can be compared against puzzle packs while we  set their edition names
+//called in initializeData() to iterate over all separated puzzle packs and append their titles to include an edition name
+func applyEditionsToPuzzlePackTitles() {
 
-//used in initializeData() as we loop over the puzzle packs. we pass puzzle pack data and files into this function one-at-a-time, and it splits everything into packs, then adds them to this class' puzzlePacks property
-func applyEditionToPuzzlePackTitles() {
 var edition = ""
+var namesOfAllPacks = [String]()
 
-for index in 0..<puzzlePacks.count {
-if index == 0 {
-edition = "First Edition"
-} else if index == 1 {
-edition = "Second Edition"
-} else if index == 2 {
-edition = "Third Edition"
-}else if index == 3 {
-edition = "Fourth Edition"
-} else if index == 4 {
-edition = "Fifth Edition"
-} else {
-edition = "**Visit ProcessRawData() in AllPuzzlePacks. Currently only accomodates for e editions" + edition
+for pack in puzzlePacks {
+
+namesOfAllPacks.append(pack.title)
+}//loop
+
+//We use this set because it can only contain one of each name. So we can find repeats as we loop through it
+let setOfUniquePuzzlePackNames = Set(namesOfAllPacks)
+
+for seriesTitle in setOfUniquePuzzlePackNames {
+var puzzlePacksInThisSeries = [PuzzlePack]()
+
+for puzzlePack in puzzlePacks {
+if seriesTitle == puzzlePack.title {
+puzzlePacksInThisSeries.append(puzzlePack)
+}//conditional
+}//nested loop iterating over namesOfAllPacks
+
+//Now that we have the number of packs in this series, we set their editions before moving on
+
+for i in 0..<puzzlePacksInThisSeries.count {
+
+if i == 0 {
+edition = "First"
+} else if i == 1 {
+edition = "Second"
+} else if i == 2 {
+edition = "Third"
+} else if i == 3 {
+edition = "Fourth"
+}else if i == 4 {
+edition = "Fifth"
+} else if i == 5 {
+edition = "Sixth"
 }//conditional
 
-puzzlePacks[index].setTitle(puzzlePacks[index].title + ": \(edition)")
-}//loop iterating over each puzzle pack
-}//getPuzzlePackTitleWithEdition
+puzzlePacksInThisSeries[i].setTitle(puzzlePacksInThisSeries[i].title + ": \(edition) Edition")
+}//loop iterating over the count of puzzles in this pack
+}//loop
+}//func
 }//class

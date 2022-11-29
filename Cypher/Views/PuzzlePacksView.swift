@@ -3,18 +3,35 @@ import SwiftUI
 struct PuzzlePacksView: View {
 
 @EnvironmentObject private var allSettings: AllSettings
+@EnvironmentObject var allSheetViewBooleans: AllSheetViewBooleans
 @EnvironmentObject var allPuzzlePacks: AllPuzzlePacks
-//passed-in from ContentView from the sheet modifier for PuzzlePacksView
-@Binding var showing: Bool
 let directoryProvider = BundleDirectoryProvider()
+//for testing
+let documentDirectory = DocumentDirectoryProvider()
 
     var body: some View {
-NavigationView {
+        
         ZStack {
         LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
 .ignoresSafeArea()
 ScrollView {
+
+//PuzzleButton(puzzle: DocumentDirectoryProvider().tryLoadingPuzzleFromDocumentDirectory(using: "TestPuzzle.json"))
 LazyVStack {
+//For testing nextPuzzleView
+Section {
+//NavigationLink("Open test puzzle") {
+//ActivePuzzleView
+//}//Navlink
+}//section
+Button("Reset all puzzles to unstarted") {
+for puzzlePack in allPuzzlePacks.puzzlePacks {
+for puzzle in puzzlePack.puzzles {
+let freshPuzzle: Puzzle = Bundle.main.decode(fromFileName: puzzle.fileName!)
+documentDirectory.savePuzzleToDocumentDirectory(for: freshPuzzle)
+}//nested loop
+}//loop
+}//button
 
 ForEach(allPuzzlePacks.puzzlePacks) {
 IndividualPuzzlePackView(puzzlePackTitle: $0.title, puzzlesInPack: $0.puzzles)
@@ -22,26 +39,22 @@ IndividualPuzzlePackView(puzzlePackTitle: $0.title, puzzlesInPack: $0.puzzles)
 }//loop
 }//LazyVstack
 }//ScrollView
-.navigationTitle("Unstarted Puzzles")
 .environmentObject(allSettings)
 .environmentObject(allPuzzlePacks)
 }//ZStack
 .environmentObject(allSettings)
 .foregroundColor(allSettings.colorScheme.secondaryFontColor)
+.onDisappear() {
+//allSheetViewBooleans.showingPuzzlePacksView = false
+}//onDisappear
 .toolbar {
-ToolbarItem(placement: .navigationBarLeading) {
-Button("Back") {
-showing = false}//button
-}//ToolbarItem
-
 ToolbarItem(placement: .navigationBarTrailing) {
 Button("Help") {
-//sheet
+//insert sheet here
 }//button
 }//ToolbarItem
 }//toolbar
-}//NavView
-.font(.title)
+.navigationTitle("Puzzle Packs")
 }//body
 }//struct
 

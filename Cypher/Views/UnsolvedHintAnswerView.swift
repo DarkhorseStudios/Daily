@@ -7,6 +7,8 @@ let pair: HintAnswerPair
     var body: some View {
         HStack {
 Text(pair.hint)
+.lineLimit(nil)
+.fixedSize(horizontal: false, vertical: true)
 .foregroundColor(allSettings.colorScheme.secondaryFontColor)
 .padding(.trailing)
 Image(systemName: "\(pair.answer.count).circle")
@@ -15,6 +17,8 @@ Image(systemName: "\(pair.answer.count).circle")
 .foregroundColor(allSettings.colorScheme.secondaryBackgroundColor)
 
 }//HStack
+.padding(.vertical
+)
 .accessibilityElement(children: .combine)
     }//body
 }//struct
