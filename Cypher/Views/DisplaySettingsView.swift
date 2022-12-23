@@ -40,15 +40,14 @@ allSettings.colorScheme = scheme
 
 Section {
 Button() {
+
 allSettings.soundEffectsEnabled.toggle()
 } label: {
 Toggle("Sound Effects", isOn: $allSettings.soundEffectsEnabled)
-if allSettings.soundEffectsEnabled {
-//Slider for volume
-}//conditional
 }//button
 
 Button() {
+allSettings.musicEnabled.toggle()
 } label: {
 Toggle("Music Enabled", isOn: $allSettings.musicEnabled)
 }//button

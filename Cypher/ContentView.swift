@@ -5,6 +5,9 @@
 import SwiftUI
 
 struct ContentView: View {
+
+//is passed-in during initialization in the .app file
+@ObservedObject var storeManager: StoreManager
 //This is passed into the environment
 @StateObject var allSettings = AllSettings()
 //We initialize PuzzlePackData in ContentView so that it is all available and only needs to be intialized when the app opens
@@ -21,13 +24,16 @@ ZStack{
 RadialGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], center: .center, startRadius: 300, endRadius: 50)
 .ignoresSafeArea()
 VStack {
-
+Button("Test puzzles for spelling errors") {
+SpellingTest().testAllPuzzles(allPuzzlePacks: allPuzzlePacks)
+}
 Spacer()
 //Something to display the game name
 HStack {
 Spacer()
-Text("Welcome to Cypher")
+Text("Welcome to Zanagrams")
 .font(.largeTitle.bold())
+.shadow(radius: 10.0)
 .foregroundColor(allSettings.colorScheme.primaryFontColor)
 .background(.clear)
 .accessibilityHeading(.h1)
@@ -72,17 +78,17 @@ Spacer()
 //Version is contained in a HStack to center it.
 HStack {
 Spacer()
-Text("Version: Still need to add a version")
+Text("Version: Alpha 1.0.0")
 .tint(allSettings.colorScheme.secondaryFontColor)
 .background(.clear)
 .font(.footnote)
 Spacer()
 }//HStack
 Spacer()
+//This is an id from the test ads, not my app
+//BannerAd(unitID: "ca-app-pub-3940256099942544/2934735716")
 }//VStack
 }//ZStack
-.navigationTitle("Welcome to Cypher")
-.font(.largeTitle)
 }//NavView
 .onAppear() {
 //PuzzlePacksView needs this to be initialized to draw the DisclosureGrops for puzzle packs, and GameData needs it to intialize data for puzzles
@@ -97,6 +103,6 @@ allPuzzlePacks.initializeData()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Text("ContentView preview")
     }
 }

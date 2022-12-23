@@ -1,24 +1,20 @@
 import Foundation
 
-class Puzzle: Codable, ObservableObject {
+class Puzzle: Codable, ObservableObject, Equatable {
 //== has two initializers
 
  private(set) var title = "default title"
   private(set) var hintAnswerPairs = [HintAnswerPair]()
- @Published private(set)var started: Bool
-@Published  private(set) var finished: Bool {
- didSet {
-var numberOfSolvedHints = 0
-for pair in hintAnswerPairs {
-if pair.solved {
-numberOfSolvedHints += 1
-}//conditional
-}//loop
-
-if numberOfSolvedHints == hintAnswerPairs.count {
-finished = true}//conditional
+ @Published private(set)var started: Bool {
+didSet {
+print("Started for \(title) is \(started)")
 }//didset
-}//finished computation block
+}//started
+@Published  private(set) var finished: Bool {
+didSet {
+print("finished set to \(finished) for \(title)")
+}//didset
+}//finished
 //when a hint is solved, the letter groups that applied to that puzzle are added to this array so that they will be dimmed if a puzzle-in-progress is opened again
 private(set) var disabledLetterGroupData: [LetterGroupButtonData]?
 //Marked as an optional so Swift doesn't try to decode a value that's not provided inside Bundle files for puzzles
@@ -39,8 +35,11 @@ self.hintAnswerPairs = ref.hintAnswerPairs
 self.started = ref.started
 self.finished = ref.finished
 self.fileName = fromFileWithName
+//nil coalescing for disabledLetterGroupButtonData makes it an empty array if it hasn't been saves
+self.disabledLetterGroupData = ref.disabledLetterGroupData ?? [LetterGroupButtonData]()
 //use nil coalescing for the score to set it to zero if it hasn't been saved yet
 self.score = ref.score ?? 99999
+//nil coalescing sets buttons pressed to zero if it hasn't been save
 self.totalButtonsPressed = ref.totalButtonsPressed ?? 0
 }//init
 
@@ -93,26 +92,34 @@ case title, hintAnswerPairs, started, finished, fileName, score, disabledLetterG
 totalButtonsPressed
 }//codingKeys
 
+//For Equatable conformance
+
+static func == (lhs: Puzzle, rhs: Puzzle) -> Bool {
+return lhs.title == rhs.title
+}// ==
+
 //methods
 
 func SetHintAnswerPairToSolved(atIndex: Int) {
 hintAnswerPairs[atIndex].setSolved(true)
 }//setHintAnswerPairToSolved
 func setStarted(_ new: Bool) {
+print("\(title) calling setStarted()")
 started = new
 }//setStarted
 func setFinished(_ new: Bool) {
+print("\(title) calling setFinished()")
 finished = new
 }//setFinished
+func setScore(_ new: Int) {
+score = new}//setScore
 func setFileName(_ new: String) {
 fileName = new
 }//setName
-
 func addToDisabledLetterGroupData(_ newDataSet: LetterGroupButtonData) {
 //We force unwrap the array because when we decode a puzzle, if no disabledLetterGroups sarray is found, we initialize an empty array and set disabledLetterGroup's value to it
 disabledLetterGroupData!.append(newDataSet)
 }//addToDisabledGroups
-
 func incrementTotalButtonsPressed() {
 //we force unwrap the value because both initializers give it a default value of 0 if nothing is found in the json file for the puzzle
 totalButtonsPressed! += 1

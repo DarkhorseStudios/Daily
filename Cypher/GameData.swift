@@ -4,14 +4,15 @@ import SwiftUI
 import AVFoundation
 
 class GameData: ObservableObject {
-var soundManager : SoundManager
+var soundManager = SoundManager()
 //used in CheckSpellingAndInformCurrentPuzzle
 let speech = AVSpeechSynthesizer()
 @Published private(set) var currentSpelling = ""
 @Published private(set) var puzzle: Puzzle
+//gets initialized in the custom Initialize() functions
 @Published private(set)var buttonData = [LetterGroupButtonData]()
 //When a button's name is added to currentSpelling, we also add its data here so we can make sure it doesn't become enabled again if the answer is corresponds to is solved.
-//If it does become solved, we then transfer the data from this array into permanentlyDisabledButtonData
+//If it does become solved, we then transfer the data from this array into permanentlyDisabledButtonData, which is stored in the Puzzle object
 private(set) var buttonDataAppliedToCurrentSpelling = [LetterGroupButtonData]()
 //used for pulling letter groups from hard-coded answers and removing the spaces from those groups to get the actual answer
 let answerParser = AnswerParser()
@@ -19,8 +20,6 @@ let answerParser = AnswerParser()
 init(puzzle: Puzzle) {
 print("GameData passed \(puzzle.title) in init")
 self.puzzle = puzzle
-//this class doesn't have allSettings as a stored property, so need to figure out how I want to do this Maybe use userDefaults
-//self.soundManager = SoundManager(allSettings: self.AllSettings)
 print("GameData's puzzle is now \(puzzle.title)")
 }//init
 
@@ -34,6 +33,7 @@ func clearCurrentSpelling() {
 currentSpelling = ""
 }//clearCurrentSpelling
 //We add this data to the array so we can make sure any buttons that spelled a completed answer don't become enabled again when we set the HintAnswerPair to solved and clearCurrentSpelling()
+
 func appendButtonDataAppliedToCurrentSpelling(with data: LetterGroupButtonData) {
 buttonDataAppliedToCurrentSpelling.append(data)
 }//appendButtonDataAppliedToCurrentSpelling
@@ -49,9 +49,7 @@ groupsAddedToDisabled += 1
 //empties the array
 buttonDataAppliedToCurrentSpelling = [LetterGroupButtonData]()
 }//transerData
-//Loops over the array of buttonData to find the data that corresponds with a button that was pressed so we can update its shouldBeHidden values
-private func updateShouldBeHiddenForButtonData(with id: UUID, to new: Bool) {
-}//updateShouldBHidden
+
 
 //Allows us to find a dataSet with a certain UUID
 //Gets called in the above actions that update values of the data sets in buttonData
@@ -105,7 +103,7 @@ soundManager.playHintSolved()
 
 CheckAndSetIfPuzzleIsComplete()
 }//checkSpellingAndInformCurrentPuzzle
-
+//Also sets the score for the puzzle
 func CheckAndSetIfPuzzleIsComplete() {
 
 var completedPairs = 0
@@ -117,15 +115,26 @@ completedPairs += 1
 }//loop
 
 if completedPairs == puzzle.hintAnswerPairs.count {
+print("GameData.CheckifComplete() found that all hints are solved. About to set the puzzle to complete.")
 puzzle.setFinished(true)
 soundManager.playPuzzleCompleted()
+puzzle.setScore(generateFinalScoreForPuzzle())
 DocumentDirectoryProvider().savePuzzleToDocumentDirectory(for: puzzle)
+print("GameData.checkIfComplete() finished conditional block fort when puzzle is complete")
 }//conditional
 }//checkIfEntirePuzzleIsComplete
 
 //Rearranges letter groups and replaces the array of letter groups with the shuffled version.
 //Used in ActivePuzzleView
 func shuffleLetterGroups() {
+
+//buttonData is a published variable, so we'll set its value to this, causing anything tied to it to be redrawn.
+var newOrderOfButtonData = [LetterGroupButtonData]()
+
+
+
+
+buttonData = newOrderOfButtonData
 }//shuffleLetterGroups
 
 //Takes-in the total number of LetterGroupButtons for a puzzle, and how many times a letterGroupButton was pressed to generate a score, like golf.
@@ -135,9 +144,10 @@ return puzzle.totalButtonsPressed! - buttonData.count
 }//generateFinalScoreForPuzzle
 
 //The rest of these methods pertain to initializing game information
-//Called in onAppear of Active Puzzle view when players want to be able to get a score for their puzzle
+//called in init for PuzzleButton so we can pass a GameData object to ActivePuzzleView.
+//When ActivePuzzleView is drawn, it iterates of the buttonData property of this class, so we have to initialize that data before passing an instance of this class to ActivePuzzleView
 func initializeHardCodedData() {
-
+print("beginning initializeHCData for \(puzzle.title)")
 //Because the answers are stored with sapces in their name, we'll have to remove them to set the answers for the puzzle
 var allAnswersSeparatedBySpaces = [String]()
 
@@ -153,36 +163,59 @@ buttonData.append(LetterGroupButtonData(name: group))
 for dataSet in buttonData {
 //we use names instead of id because they get different UUIDs whenever they are initialized
 if puzzle.disabledLetterGroupData!.contains(where: {$0.name == dataSet.name}) {
-print("initialize hardcoded data just hid \(dataSet.name)")
 dataSet.setShouldBeHidden(true)
 }//nested conditional
 }//nested loop
-
 }//initialize hardcoded data
 
+//uses to iterate over data for all the buttons and draw them in rows
+//called in ActivePuzzleView when drawing letter group buttons to the screen.
+func getButtonsInRows() -> some View {
+
+//we make a copy of button data so we can remove() items from it
+var copyOfButtonData = buttonData
+//holds individual arrays of LetterGroupButtonData that will be iterated over
+var dataInRows = [[LetterGroupButtonData]]()
+
+for rowSize in getNumberOfButtonsPerRow() {
+var newRowOfData = [LetterGroupButtonData]()
+
+for _ in 1...rowSize {
+
+if let newDataSet = copyOfButtonData.randomElement() {
+newRowOfData.append(newDataSet)
+
+if let indexOfDataSet = copyOfButtonData.firstIndex(of: newDataSet) {
+copyOfButtonData.remove(at: indexOfDataSet)
+}//unwrap
+}//nested loop
+
+dataInRows.append(newRowOfData)
+}//unwrap for newDataSet
+}//loop
+
+return Group {
+ForEach(dataInRows, id: \.self) { arrayOfData in
+HStack {
+ForEach(arrayOfData, id: \.self) {
+LetterGroupButton(model: $0)
+}//loop
+}//HStack
+}//loop
+}//group
+}//getButtonsInRows
+
 //This takes all of the answers, converts them to letter groups, fills button data, and appends the array of button data
-//Called in onAppear of ActivePuzzleView
+//called in init for PuzzleButton when a puzzle has already been completed.so we can pass a GameData object to ActivePuzzleView.
+//When ActivePuzzleView is drawn, it iterates of the buttonData property of this class, so we have to initialize that data before passing an instance of this class to ActivePuzzleView
 func initializeRandomizedData() {
 var allAnswers = [String]()
 for i in puzzle.hintAnswerPairs {
 allAnswers.append(i.answer)
 }//loop
-
-let allLetterGroups = splitAllAnswersIntoLetterGroups(allAnswers: allAnswers)
-
-var indexOfRow = 0
-//This value is for retrieving the name of each button
-var indexInAllLetterGroups = 0
-
-for rowSize in getNumberOfButtonsPerRow(allLetterGroups: allLetterGroups) {
-for indexOfButtonInRow in 0..<rowSize {
-buttonData.append(LetterGroupButtonData(name: allLetterGroups[indexInAllLetterGroups]))
-indexInAllLetterGroups += 1
-}//nested loop
-
-indexOfRow += 1
-}//loop
-}//initializeData
+//**Need to assign this somewhere.
+//let allLetterGroups = splitAllAnswersIntoLetterGroups(allAnswers: allAnswers)
+}//initializeRandomizedData
 
 //This is used to separate all of the answers into scrambled letter groups so that they can be passed into the LetterGroupButtonView
 //It does so by calling successive functions that ultimately split words into groups of two or three letters, then returning an array containing every one of those groups of letters
@@ -373,25 +406,40 @@ allAnswersWithSpaces.append(pair.answer)
 return allAnswersWithSpaces
 }//func
 //Used in initializeData(). Determines the number of buttons per row
-func getNumberOfButtonsPerRow(allLetterGroups: [String]) -> [Int] {
+func getNumberOfButtonsPerRow() -> [Int] {
+
 //return array
 var buttonsPerRow = [Int]()
 //We use 5 here because we only want a maximum of 5 buttons per row
-let remainder = allLetterGroups.count % 5
+let remainder = buttonData.count % 5
 if remainder > 0 {
 
-let numberOfFullRows = (allLetterGroups.count - remainder) / 5
-for _ in 1...numberOfFullRows {
+let numberOfFullRows = (buttonData.count - remainder) / 5
+
+//conditional makes sure we don't get an out-of bounds exception. This happens when testing puzzles with singular letter groups that solve answers, like in SmallTestPuzzle.json
+var lowerBoundOfLoop = 0
+if numberOfFullRows >= 1 {
+
+lowerBoundOfLoop = 1
+
+}//safety conditional
+for _ in lowerBoundOfLoop...numberOfFullRows {
 buttonsPerRow.append(5)
 }//loop
 
 buttonsPerRow.append(remainder)
+
 }else {
-let numberOfRows = Int(allLetterGroups.count / 5)
+print("get number of buttons per row starting else block")
+print("button data size: \(buttonData.count)")
+let numberOfRows = Int(buttonData.count / 5)
 for i in 1...numberOfRows {
 buttonsPerRow.append(i)
 }//loop
 }//conditional
 return buttonsPerRow
 }//func
+
+func setPuzzle(_ new: Puzzle) {
+puzzle = new}//setPuzzle
 }//class

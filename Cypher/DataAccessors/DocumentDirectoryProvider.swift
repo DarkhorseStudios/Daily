@@ -34,7 +34,7 @@ fatalError("Couldn't save file to DocumentDirectory")
 //Attempts to load a puzzle from the DocumentsDirectory. If the contents of the Data object can't make a puzzle, we just return a puzzle from the Bundle.
 func tryLoadingPuzzleFromDocumentDirectory(using fileName: String) -> Puzzle {
 
-//returned value. Initially set to TestPuzzle so I know there's an error if I see it.
+//returned value. Initially set to TestPuzzle so I know there's an error if I see it appear in an ActivePuzzleView or PuzzleButton
 var puzzleFromDirectory = Puzzle(fromFileWithName: "TestPuzzle.json")
 
 guard let url = try? getDocumentsDirectoryURL().appendingPathComponent(fileName) else {
@@ -94,7 +94,7 @@ print(error.localizedDescription)
 fatalError("Failed to save user to DocumentDirectory")
 }//catch
 }//saveUserData
-
+/*
 func loadUser() -> User {
 
 // if the url isn't found, we have to create one, because that means the user hasn't been initialized
@@ -122,4 +122,5 @@ fatalError("Failed to load user")
 
 return user
 }//loadUser
+*/
 }//class

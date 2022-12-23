@@ -3,6 +3,7 @@ import Foundation
 //used for making letter groups for hard-coded puzzles
 struct AnswerParser {
 //takes-in array of all the answers for a puzzle
+//called in the custom initialize() functions in GameData
 func parseLetterGroups(in inputArray: [String]) -> [String] {
 
 //return array

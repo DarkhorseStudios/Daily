@@ -6,7 +6,7 @@ func decode<Type: Decodable>(fromFileName: String) -> Type {
 guard let url = try? Bundle.main.url(forResource: fromFileName, withExtension: nil) else {
 fatalError("URL not found for type  from file: \(fromFileName)")
 }//guard
-print("url found for \(fromFileName)")
+
 guard let data = try? Data(contentsOf: url) else {
 fatalError("url could not be converted to data.")
 }//guard

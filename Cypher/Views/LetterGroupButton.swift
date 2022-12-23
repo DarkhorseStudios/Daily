@@ -26,6 +26,8 @@ model.setShouldBeHidden(true)
 }//WithAnimation
 }//conditional checking model.shouldBeHidden
 }//button
+.clipShape(RoundedRectangle(cornerRadius: 5.0))
+.foregroundColor(allSettings.colorScheme.secondaryFontColor)
 .opacity(model.appearanceData.opacity)
 .accessibilityLabel(model.appearanceData.accessibilityLabel)
 .speechSpellsOutCharacters(model.appearanceData.accessibilityLabelShouldBeReadAsCharacters)
@@ -43,6 +45,22 @@ utterance.prefersAssistiveTechnologySettings = true
 speech.usesApplicationAudioSession = false
 speech.speak(utterance)
 }//magicTap
+.onTapGesture(count: 3, perform: {
+if UIAccessibility.isVoiceOverRunning {
+for pair in gameData.puzzle.hintAnswerPairs {
+if !pair.solved {
+let utterance = AVSpeechUtterance(string: pair.hint)
+utterance.prefersAssistiveTechnologySettings = true
+
+//Routes this speech to the system, which automatically  uses audio ducking and things like that.
+speech.usesApplicationAudioSession = false
+speech.speak(utterance)
+}//nested loop
+}//loop
+}//conditional checking if voiceover is running
+
+})//triple tap
+
 }//body
 }//struct
 

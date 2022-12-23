@@ -1,0 +1,13 @@
+{
+"title": "Small Test Puzzle",
+"hintAnswerPairs": [
+{"hint": "Worst pet",
+"answer": "cat",
+"solved": false},
+{"hint": "Best animal",
+"answer": "dog",
+"solved": false}
+],
+"started": false,
+"finished": false
+}

@@ -19,7 +19,6 @@ VStack {
 HStack {
 
 Spacer()
-
 //we force-unwrap this string because it's hard-coded and shouldn't be able to fail
 Text(completionMessages.randomElement()!)
 .font(.title)
@@ -37,32 +36,29 @@ Section {
 
 ShareScoreButton()
 .clipShape(Capsule())
+.shadow(radius: 5.0)
+.buttonStyle(.borderedProminent)
 
 HStack {
 Spacer()
-Button("Next Puzzle") {
-allSheetViewBooleans.userSelectedNextPuzzle = true
-allSheetViewBooleans.showingNextPuzzlePromptView = false
+Button("Next Puzzle ** Not hokked-up**") {
+//Need code here
 }//Button
 Spacer()
 }//HStack
 
 HStack {
 Spacer()
-
 Button("Puzzlepacks") {
-allSheetViewBooleans.userSelectedPuzzlePacksView = true
-allSheetViewBooleans.showingNextPuzzlePromptView = false
+allSheetViewBooleans.userSelectedPuzzlePacks()
 }//Button
 Spacer()
 }//HStack
 
 HStack {
 Spacer()
-
 Button("Main Menu") {
-allSheetViewBooleans.userSelectedMainMenu = true
-allSheetViewBooleans.showingNextPuzzlePromptView = false
+allSheetViewBooleans.userSelectedMainMenu()
 }//button
 Spacer()
 }//HStack

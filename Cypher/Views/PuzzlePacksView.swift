@@ -2,6 +2,8 @@ import SwiftUI
 
 struct PuzzlePacksView: View {
 
+//used so we can dismiss this view when a choice is made
+@Environment(\.dismiss) var dismiss
 @EnvironmentObject private var allSettings: AllSettings
 @EnvironmentObject var allSheetViewBooleans: AllSheetViewBooleans
 @EnvironmentObject var allPuzzlePacks: AllPuzzlePacks
@@ -10,20 +12,15 @@ let directoryProvider = BundleDirectoryProvider()
 let documentDirectory = DocumentDirectoryProvider()
 
     var body: some View {
-        
+
         ZStack {
         LinearGradient(colors: [allSettings.colorScheme.primaryBackgroundColor, allSettings.colorScheme.secondaryBackgroundColor], startPoint: .top, endPoint: .bottom)
 .ignoresSafeArea()
 ScrollView {
-
-//PuzzleButton(puzzle: DocumentDirectoryProvider().tryLoadingPuzzleFromDocumentDirectory(using: "TestPuzzle.json"))
+//For testing nav view and collapsing multiple views
+PuzzleButton(puzzle: Puzzle(fromFileWithName: "SmallTestPuzzle.json"))
 LazyVStack {
-//For testing nextPuzzleView
-Section {
-//NavigationLink("Open test puzzle") {
-//ActivePuzzleView
-//}//Navlink
-}//section
+
 Button("Reset all puzzles to unstarted") {
 for puzzlePack in allPuzzlePacks.puzzlePacks {
 for puzzle in puzzlePack.puzzles {
@@ -44,6 +41,11 @@ IndividualPuzzlePackView(puzzlePackTitle: $0.title, puzzlesInPack: $0.puzzles)
 }//ZStack
 .environmentObject(allSettings)
 .foregroundColor(allSettings.colorScheme.secondaryFontColor)
+.onChange(of: allSheetViewBooleans.showingPuzzlePacksView) {newValue in
+if newValue == false {
+dismiss()
+}//conditional
+}//onChange
 .onDisappear() {
 //allSheetViewBooleans.showingPuzzlePacksView = false
 }//onDisappear
